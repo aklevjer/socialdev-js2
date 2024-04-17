@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Register to SocialDev now and start sharing, chatting, and connecting with the community." />
+    <title>SocialDev - Register</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,5 +18,89 @@
     <link rel="stylesheet" href="/dist/index.css" />
     <script type="module" src="/src/js/index.mjs"></script>
   </head>
-  <body></body>
+  <body
+    class="flex min-h-screen flex-col justify-center gap-12 bg-gray-800 font-light text-gray-200">
+    <header class="mx-auto">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/src/assets/svg/logo.svg" alt="SocialDev logo" />
+        <span class="font-mono text-2xl text-gray-100">SocialDev</span>
+      </a>
+    </header>
+
+    <main class="container flex justify-center">
+      <section
+        class="rounded-md border border-gray-500 bg-gray-700 px-7 py-12 sm:px-16">
+        <h1
+          class="mb-4 text-center text-3xl font-semibold capitalize text-gray-100">
+          Register
+        </h1>
+        <p class="mb-6 text-center">
+          Please register below in order to sign in.
+        </p>
+
+        <form name="register" class="space-y-6">
+          <div class="flex">
+            <label for="username" class="sr-only">Username</label>
+            <i
+              class="bi bi-person-fill rounded-s-md border-y border-l border-gray-400 bg-gray-600 p-3"></i>
+            <input
+              type="text"
+              class="w-full rounded-e-md border border-gray-400 bg-gray-600 p-3 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+              id="username"
+              name="name"
+              placeholder="Username"
+              required
+              pattern="^[\w]+$"
+              maxlength="20"
+              title="Username can only contain letters, numbers, and underscores (_)" />
+          </div>
+
+          <div class="flex">
+            <label for="email" class="sr-only">Email address</label>
+            <i
+              class="bi bi-envelope-fill rounded-s-md border-y border-l border-gray-400 bg-gray-600 p-3"></i>
+            <input
+              type="email"
+              class="w-full rounded-e-md border border-gray-400 bg-gray-600 p-3 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+              id="email"
+              name="email"
+              placeholder="email@stud.noroff.no"
+              required
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="Please enter a valid email ending with @stud.noroff.no or @noroff.no" />
+          </div>
+
+          <div class="flex">
+            <label for="password" class="sr-only">Password</label>
+            <i
+              class="bi bi-lock-fill rounded-s-md border-y border-l border-gray-400 bg-gray-600 p-3"></i>
+            <input
+              type="password"
+              class="w-full rounded-e-md border border-gray-400 bg-gray-600 p-3 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+              minlength="8"
+              title="Password must be at least 8 characters long" />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-md bg-blue-600 py-2 font-normal capitalize text-white transition-colors hover:bg-opacity-80">
+            Register
+          </button>
+        </form>
+
+        <p class="mt-4">
+          Already have an account?
+          <a
+            href="/"
+            class="inline-block capitalize text-blue-400 transition-colors hover:text-opacity-80">
+            Log in
+          </a>
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
