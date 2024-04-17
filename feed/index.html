@@ -61,7 +61,7 @@
         </nav>
 
         <button
-          class="size-10 rounded border border-gray-400 text-2xl active:scale-95 md:hidden"
+          class="size-10 rounded-md border border-gray-400 text-2xl active:scale-95 md:hidden"
           id="nav-button"
           aria-expanded="false"
           aria-label="Menu">
@@ -73,10 +73,11 @@
     <main class="container grid grid-cols-12 py-12 md:gap-12">
       <aside class="hidden md:col-span-4 md:block">
         <section
-          class="sticky top-[121px] rounded border border-gray-500 bg-gray-700 px-8 py-6">
+          class="sticky top-[121px] rounded-md border border-gray-500 bg-gray-700 px-8 py-6">
           <h2 class="text-xl font-semibold capitalize text-gray-100">
             Quick links
           </h2>
+
           <hr class="mb-6 mt-4 border-gray-400" />
 
           <ul class="grid gap-4 font-medium">
@@ -131,6 +132,50 @@
           </ul>
         </section>
       </aside>
+
+      <div class="col-span-12 md:col-span-8">
+        <h1 class="mb-4 text-3xl font-semibold capitalize text-gray-100">
+          Activity feed
+        </h1>
+
+        <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:justify-between">
+          <form class="space-y-2">
+            <label for="search" class="block text-m font-medium">
+              Search feed
+            </label>
+
+            <div class="flex">
+              <input
+                type="search"
+                id="search"
+                name="search"
+                class="w-full rounded-s-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                placeholder="Enter keywords.." />
+              <button
+                type="submit"
+                class="rounded-e-md bg-gray-400 px-4 py-2 transition-colors hover:bg-opacity-80"
+                aria-label="Search">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="space-y-2">
+            <label for="sort" class="block text-m font-medium">Sort by</label>
+
+            <select
+              class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none focus:border-blue-600 sm:w-auto"
+              id="sort">
+              <option value="date-latest">Date (Latest)</option>
+              <option value="date-oldest">Date (Oldest)</option>
+              <option value="likes-most">Likes (Most)</option>
+              <option value="likes-least">Likes (Least)</option>
+              <option value="comments-most">Comments (Most)</option>
+              <option value="comments-least">Comments (Least)</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
