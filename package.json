@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/aklevjer/socialdev-js2/issues"
   },
-  "homepage": "https://github.com/aklevjer/socialdev-js2#readme"
+  "homepage": "https://github.com/aklevjer/socialdev-js2#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3"
+  }
 }
