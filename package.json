@@ -4,7 +4,11 @@
   "description": "A social media app developed as the course assignment in the JavaScript 2 course at Noroff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/css/index.css -o ./dist/index.css --minify",
+    "watch": "tailwindcss -i ./src/css/index.css -o ./dist/index.css --watch",
+    "start": "live-server",
+    "dev": "npm-run-all --parallel watch start"
   },
   "repository": {
     "type": "git",
