@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Explore your SocialDev profile, connect with followers, and showcase your avatar." />
+    <title>SocialDev - Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,5 +18,56 @@
     <link rel="stylesheet" href="/dist/index.css" />
     <script type="module" src="/src/js/index.mjs"></script>
   </head>
-  <body></body>
+  <body class="bg-gray-800 font-light text-gray-200">
+    <header class="sticky top-0 border-b border-gray-500 bg-gray-700">
+      <div class="container flex items-center justify-between py-4">
+        <a href="/feed/" class="flex items-center gap-2 py-1">
+          <img src="/src/assets/svg/logo.svg" alt="SocialDev logo" />
+          <span class="font-mono text-2xl text-gray-100">SocialDev</span>
+        </a>
+
+        <nav
+          id="nav"
+          class="absolute left-0 top-[72px] hidden w-full bg-gray-700 md:static md:block md:w-auto">
+          <ul
+            class="flex flex-col gap-4 border-b border-gray-500 px-4 pb-5 md:flex-row md:gap-8 md:border-0 md:p-0">
+            <li>
+              <a
+                href="/feed/"
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                <i class="bi bi-house-fill"></i>
+                <span>Feed</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/profile/"
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                <i class="bi bi-person-fill"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+
+            <li>
+              <button
+                id="logout-btn"
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="size-10 rounded border border-gray-400 text-2xl active:scale-95 md:hidden"
+          id="nav-button"
+          aria-expanded="false"
+          aria-label="Menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </header>
+  </body>
 </html>
