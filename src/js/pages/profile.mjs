@@ -1,3 +1,3 @@
-export function profilePage(user) {
+export function profilePage({ user }) {
   // Profile page logic
 }

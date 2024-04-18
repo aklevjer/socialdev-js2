@@ -24,13 +24,13 @@ export default function router() {
     case "/profile":
     case "/profile/":
     case "/profile/index.html":
-      checkAuth(() => pages.profilePage(params.user));
+      checkAuth(() => pages.profilePage(params));
       break;
 
     case "/post":
     case "/post/":
     case "/post/index.html":
-      checkAuth(() => pages.postPage(params.id));
+      checkAuth(() => pages.postPage(params));
       break;
   }
 }

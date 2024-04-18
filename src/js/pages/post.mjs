@@ -1,3 +1,3 @@
-export function postPage(id) {
+export function postPage({ id }) {
   // Post page logic
 }
