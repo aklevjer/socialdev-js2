@@ -1,4 +1,5 @@
 import { register, login } from "../../api/index.mjs";
+import { showErrorAlert } from "../ui/index.mjs";
 
 async function handleRegister(event) {
   event.preventDefault();
@@ -9,17 +10,13 @@ async function handleRegister(event) {
 
   try {
     await register(account);
-  } catch (error) {
-    console.error(error);
-    return;
-  }
-
-  try {
     const { name, ...profile } = account;
+
     await login(profile);
     location.href = "/profile/";
   } catch (error) {
-    console.error(error);
+    const formMsg = document.querySelector("#form-message");
+    showErrorAlert(error.message, formMsg);
   }
 }
 

@@ -8,8 +8,9 @@ export async function login(account) {
     body: JSON.stringify(account),
   });
 
+  const responseData = await response.json();
+
   if (response.ok) {
-    const responseData = await response.json();
     const { accessToken, ...profile } = responseData.data;
 
     storage.set("accessToken", accessToken);
@@ -18,5 +19,7 @@ export async function login(account) {
     return profile;
   }
 
-  throw new Error("Failed to login to the account");
+  const errorMessage =
+    responseData.errors[0]?.message || "Failed to login to the account";
+  throw new Error(errorMessage);
 }

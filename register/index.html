@@ -34,7 +34,7 @@
           class="mb-4 text-center text-3xl font-semibold capitalize text-gray-100">
           Register
         </h1>
-        <p class="mb-6 text-center">
+        <p id="form-message" class="mb-6 text-center">
           Please register below in order to sign in.
         </p>
 
@@ -102,5 +102,16 @@
         </p>
       </section>
     </main>
+
+    <!-- Templates -->
+    <div class="hidden">
+      <template id="error-template">
+        <div
+          class="mb-4 flex items-center gap-2 rounded-md bg-red-900 p-3 text-m font-normal">
+          <i class="bi bi-exclamation-circle"></i>
+          <p class="error-message"></p>
+        </div>
+      </template>
+    </div>
   </body>
 </html>

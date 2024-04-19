@@ -1,4 +1,5 @@
 import { login } from "../../api/auth/index.mjs";
+import { showErrorAlert } from "../ui/index.mjs";
 
 async function handleLogin(event) {
   event.preventDefault();
@@ -11,7 +12,8 @@ async function handleLogin(event) {
     await login(account);
     location.href = "/profile/";
   } catch (error) {
-    console.error(error);
+    const formMsg = document.querySelector("#form-message");
+    showErrorAlert(error.message, formMsg);
   }
 }
 
