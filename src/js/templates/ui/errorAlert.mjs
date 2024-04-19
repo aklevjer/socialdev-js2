@@ -1,4 +1,4 @@
-import { getTemplateClone } from "../../utils/index.mjs";
+import { getTemplateClone } from "../../utils/html/index.mjs";
 
 export function createErrorAlert(errorMessage) {
   const errorClone = getTemplateClone("error");
