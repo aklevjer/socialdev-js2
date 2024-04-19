@@ -35,9 +35,10 @@
           class="mb-4 text-center text-3xl font-semibold capitalize text-gray-100">
           Log in
         </h1>
-        <p id="form-message" class="mb-6 text-center">
-          Welcome! Please enter your details below.
-        </p>
+
+        <div id="form-message" class="mb-6">
+          <p class="text-center">Welcome! Please enter your details below.</p>
+        </div>
 
         <form name="login" class="space-y-6">
           <div class="flex">
@@ -92,7 +93,7 @@
     <div class="hidden">
       <template id="error-template">
         <div
-          class="mb-4 flex items-center gap-2 rounded-md bg-red-900 p-3 text-m font-normal">
+          class="flex items-center gap-2 rounded-md bg-red-900 p-3 text-m font-normal">
           <i class="bi bi-exclamation-circle"></i>
           <p class="error-message"></p>
         </div>
