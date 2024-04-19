@@ -1,9 +1,11 @@
 import { createErrorAlert } from "../../templates/ui/index.mjs";
+import { clearElement } from "../../utils/html/index.mjs";
 
-export function showErrorAlert(errorMessage, targetElement) {
+export function showErrorAlert(errorMessage, parentElement) {
   const errorClone = createErrorAlert(errorMessage);
 
-  if (targetElement) {
-    targetElement.replaceWith(errorClone);
+  if (parentElement) {
+    clearElement(parentElement);
+    parentElement.appendChild(errorClone);
   }
 }
