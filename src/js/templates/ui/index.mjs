@@ -1,1 +1,1 @@
-export * from "./errorAlert.mjs";
+export * from "./alert.mjs";

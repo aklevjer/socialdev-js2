@@ -1,5 +1,5 @@
 import { register, login } from "../../api/index.mjs";
-import { showErrorAlert } from "../ui/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 async function handleRegister(event) {
   event.preventDefault();
@@ -16,7 +16,7 @@ async function handleRegister(event) {
     location.href = "/profile/";
   } catch (error) {
     const formMsg = document.querySelector("#form-message");
-    showErrorAlert(error.message, formMsg);
+    showAlert("error", error.message, formMsg);
   }
 }
 
