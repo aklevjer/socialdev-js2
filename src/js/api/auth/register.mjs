@@ -14,6 +14,6 @@ export async function register(account) {
   }
 
   const errorMessage =
-    responseData.errors[0]?.message || "Failed to register the account";
+    responseData?.errors[0]?.message || "Failed to register the account";
   throw new Error(errorMessage);
 }

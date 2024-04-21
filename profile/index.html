@@ -150,7 +150,7 @@
             <h1 class="m-3 text-3xl font-semibold text-gray-100">Username</h1>
 
             <button
-              class="space-x-1 rounded-md bg-blue-600 px-3 py-2 font-normal capitalize text-white transition-colors hover:bg-opacity-80 sm:ms-auto">
+              class="space-x-1 rounded-md bg-blue-600 px-3 py-2 font-normal text-white transition-colors hover:bg-opacity-80 sm:ms-auto">
               <i class="bi-person-plus-fill"></i>
               <span>Follow</span>
             </button>
@@ -183,11 +183,11 @@
 
     <!-- Templates -->
     <div class="hidden">
-      <template id="error-template">
+      <template id="alert-template">
         <div
-          class="flex items-center gap-2 rounded-md bg-red-900 p-3 text-m font-normal">
-          <i class="bi bi-exclamation-circle"></i>
-          <p class="error-message"></p>
+          class="alert-container flex items-center gap-2 rounded-md p-3 text-m font-normal">
+          <i class="alert-icon"></i>
+          <p class="alert-message"></p>
         </div>
       </template>
     </div>

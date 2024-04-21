@@ -135,9 +135,17 @@
       </aside>
 
       <div class="col-span-12 md:col-span-8">
-        <h1 class="mb-4 text-3xl font-semibold capitalize text-gray-100">
-          Activity feed
-        </h1>
+        <div class="mb-8 flex flex-wrap justify-between gap-4">
+          <h1 class="text-3xl font-semibold capitalize text-gray-100">
+            Activity feed
+          </h1>
+
+          <button
+            class="space-x-1 rounded bg-blue-600 px-3 py-2 text-sm font-normal text-white transition-colors hover:bg-opacity-80">
+            <i class="bi bi-plus-square"></i>
+            <span>New post</span>
+          </button>
+        </div>
 
         <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:justify-between">
           <form class="space-y-2">
@@ -181,11 +189,11 @@
 
     <!-- Templates -->
     <div class="hidden">
-      <template id="error-template">
+      <template id="alert-template">
         <div
-          class="flex items-center gap-2 rounded-md bg-red-900 p-3 text-m font-normal">
-          <i class="bi bi-exclamation-circle"></i>
-          <p class="error-message"></p>
+          class="alert-container flex items-center gap-2 rounded-md p-3 text-m font-normal">
+          <i class="alert-icon"></i>
+          <p class="alert-message"></p>
         </div>
       </template>
     </div>
