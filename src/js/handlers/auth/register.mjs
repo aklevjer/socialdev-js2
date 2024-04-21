@@ -1,4 +1,4 @@
-import { register, login } from "../../api/index.mjs";
+import { register, login } from "../../api/auth/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
 async function handleRegister(event) {
