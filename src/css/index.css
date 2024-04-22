@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilites {
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+}
