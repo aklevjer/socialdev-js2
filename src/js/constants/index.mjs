@@ -15,3 +15,8 @@ export const API_REGISTER_URL = API_BASE + API_AUTH + API_REGISTER;
 export const API_LOGIN_URL = API_BASE + API_AUTH + API_LOGIN;
 export const API_POSTS_URL = API_BASE + API_SOCIAL + API_POSTS;
 export const API_PROFILES_URL = API_BASE + API_SOCIAL + API_PROFILES;
+
+// Default image urls
+export const DEFAULT_AVATAR_URL = "/src/assets/img/default-avatar.jpg";
+export const DEFAULT_BANNER_URL = "/src/assets/img/default-banner.jpg";
+export const DEFAULT_POST_URL = "/src/assets/img/default-post.jpg";
