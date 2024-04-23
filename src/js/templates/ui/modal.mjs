@@ -4,7 +4,7 @@ import {
   closeModalOutside,
 } from "../../handlers/ui/modal/index.mjs";
 
-export function createModal(submitHandler, postData) {
+export function createModalTemplate(submitHandler, postData) {
   const modalClone = getTemplateClone("modal");
   const modal = modalClone.querySelector(".modal");
   const modalTitle = modalClone.querySelector(".modal-title");

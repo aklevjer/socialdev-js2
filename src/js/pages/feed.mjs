@@ -1,5 +1,5 @@
 import { getPosts } from "../api/posts/index.mjs";
-import { createPost } from "../templates/post/index.mjs";
+import { createPostTemplate } from "../templates/post/index.mjs";
 import { setCreatePostListener } from "../handlers/posts/index.mjs";
 
 export async function feedPage() {
@@ -7,7 +7,7 @@ export async function feedPage() {
 
   try {
     const allPosts = await getPosts();
-    const createdPosts = allPosts.data.map((post) => createPost(post));
+    const createdPosts = allPosts.data.map(createPostTemplate);
     feedList.append(...createdPosts);
   } catch (error) {
     console.error(error);
