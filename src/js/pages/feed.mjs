@@ -1,5 +1,6 @@
 import { getPosts } from "../api/posts/index.mjs";
 import { createPost } from "../templates/post/index.mjs";
+import { setCreatePostListener } from "../handlers/posts/index.mjs";
 
 export async function feedPage() {
   const feedList = document.querySelector("#feed-list");
@@ -11,4 +12,6 @@ export async function feedPage() {
   } catch (error) {
     console.error(error);
   }
+
+  setCreatePostListener();
 }
