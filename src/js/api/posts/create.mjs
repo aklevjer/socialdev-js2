@@ -7,9 +7,13 @@ export async function createPost(postData) {
     body: JSON.stringify(postData),
   });
 
+  const responseData = await response.json();
+
   if (response.ok) {
-    return await response.json();
+    return responseData;
   }
 
-  throw new Error("Failed to create post");
+  const errorMessage =
+    responseData?.errors[0]?.message || "Failed to create post";
+  throw new Error(errorMessage);
 }

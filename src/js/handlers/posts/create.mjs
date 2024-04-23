@@ -1,5 +1,6 @@
 import { createPost } from "../../api/posts/create.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 async function handleCreatePost(event) {
   event.preventDefault();
@@ -32,7 +33,8 @@ async function handleCreatePost(event) {
     await createPost(newPost);
     closeModal();
   } catch (error) {
-    console.error(error);
+    const formMsg = document.querySelector("#form-message");
+    showAlert("error", error.message, formMsg);
   }
 }
 
