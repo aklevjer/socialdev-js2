@@ -1,6 +1,6 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
-export function createAlert(alertType, alertMessage) {
+export function createAlertTemplate(alertType, alertMessage) {
   const alertClone = getTemplateClone("alert");
   const alertContainer = alertClone.querySelector(".alert-container");
   const alertIcon = alertClone.querySelector(".alert-icon");

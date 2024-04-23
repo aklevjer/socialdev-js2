@@ -1,7 +1,7 @@
 import * as postComps from "./index.mjs";
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
-export function createPost(postData) {
+export function createPostTemplate(postData) {
   const postClone = getTemplateClone("post");
 
   postComps.updatePostHeader(postClone, postData);
