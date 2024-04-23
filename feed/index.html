@@ -52,8 +52,8 @@
 
             <li>
               <button
-                id="logout-btn"
-                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75"
+                id="logout-btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Log out</span>
               </button>
@@ -135,15 +135,16 @@
       </aside>
 
       <div class="col-span-12 md:col-span-8">
-        <div class="mb-8 flex flex-wrap justify-between gap-4">
+        <div class="mb-8 flex flex-wrap justify-between gap-8">
           <h1 class="text-3xl font-semibold capitalize text-gray-100">
             Activity feed
           </h1>
 
           <button
-            class="space-x-1 rounded bg-blue-600 px-3 py-2 text-sm font-normal text-white transition-colors hover:bg-opacity-80">
+            class="space-x-1 rounded bg-blue-600 px-3 py-2 text-m font-normal text-white transition-colors hover:bg-opacity-80"
+            id="create-post-btn">
             <i class="bi bi-plus-square"></i>
-            <span>New post</span>
+            <span>Create post</span>
           </button>
         </div>
 
@@ -192,7 +193,8 @@
     <!-- Templates -->
     <div class="hidden">
       <template id="post-template">
-        <li class="grid gap-4 rounded border border-gray-500 bg-gray-700 p-6">
+        <li
+          class="grid gap-4 rounded-md border border-gray-500 bg-gray-700 p-6">
           <div class="flex flex-wrap items-center gap-2">
             <img
               src=""
@@ -234,18 +236,90 @@
 
           <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
             <button
-              class="space-x-2 font-normal text-gray-100 transition-colors hover:text-opacity-80">
+              class="space-x-1 font-normal text-gray-100 transition-colors hover:text-opacity-80">
               <i class="bi bi-heart"></i>
               <span class="post-likes"></span>
             </button>
 
             <button
-              class="space-x-2 font-normal text-gray-100 transition-colors hover:text-opacity-80">
+              class="space-x-1 font-normal text-gray-100 transition-colors hover:text-opacity-80">
               <i class="bi bi-chat-right"></i>
               <span class="post-comments"></span>
             </button>
           </div>
         </li>
+      </template>
+
+      <template id="modal-template">
+        <dialog
+          class="modal w-full max-w-xl bg-transparent backdrop:bg-black/50">
+          <section
+            class="mx-4 rounded-md border border-gray-500 bg-gray-700 px-4 py-8 text-gray-200 sm:px-10">
+            <h2
+              class="modal-title mb-6 text-xl font-semibold capitalize text-gray-100"></h2>
+
+            <form class="modal-form space-y-6">
+              <div class="space-y-2">
+                <label for="title" class="text-m font-medium">Title</label>
+                <input
+                  type="text"
+                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                  id="title"
+                  name="title"
+                  placeholder="Title"
+                  required
+                  maxlength="280"
+                  title="Title is required" />
+              </div>
+
+              <div class="space-y-2">
+                <label for="url" class="text-m font-medium">Image URL</label>
+                <input
+                  type="url"
+                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                  id="url"
+                  name="url"
+                  placeholder="https://www.example.com/image.jpg"
+                  pattern="https?://.+"
+                  maxlength="300"
+                  title="Must be a valid, live, and publicly accessible image URL" />
+              </div>
+
+              <div class="space-y-2">
+                <label for="tags" class="text-m font-medium">Tags</label>
+                <input
+                  type="text"
+                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                  id="tags"
+                  name="tags"
+                  placeholder="i.e. HTML CSS Tailwind"
+                  title="Separate tags with a space, tags can't contain hashtags (#)" />
+              </div>
+
+              <div class="space-y-2">
+                <label for="body" class="text-m font-medium">Text</label>
+                <textarea
+                  class="min-h-32 w-full resize-none rounded-md border border-gray-400 bg-gray-600 p-2 align-top outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                  id="body"
+                  name="body"
+                  maxlength="280"
+                  placeholder="Write your text here..."></textarea>
+              </div>
+
+              <div class="flex justify-end gap-4">
+                <button
+                  type="button"
+                  class="modal-cancel-btn rounded-md bg-gray-400 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80">
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  class="modal-post-btn rounded-md bg-blue-600 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80"></button>
+              </div>
+            </form>
+          </section>
+        </dialog>
       </template>
 
       <template id="alert-template">
