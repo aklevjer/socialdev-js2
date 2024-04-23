@@ -1,4 +1,4 @@
-import { createPost } from "../../api/posts/create.mjs";
+import { createPost } from "../../api/posts/index.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
