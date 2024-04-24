@@ -185,8 +185,8 @@
     <div class="hidden">
       <template id="post-template">
         <li
-          class="grid gap-4 rounded-md border border-gray-500 bg-gray-700 p-6">
-          <div class="flex flex-wrap items-center gap-2">
+          class="post grid gap-4 rounded-md border border-gray-500 bg-gray-700 p-6">
+          <div class="post-header flex flex-wrap items-center gap-2">
             <img
               src=""
               alt=""
@@ -239,6 +239,36 @@
             </button>
           </div>
         </li>
+      </template>
+
+      <template id="dropdown-template">
+        <div class="relative ml-auto">
+          <button
+            class="dropdown-btn size-9 rounded text-xl transition-colors hover:bg-gray-400"
+            aria-expanded="false"
+            aria-label="Dropdown">
+            <i class="bi bi-three-dots"></i>
+          </button>
+
+          <ul
+            class="dropdown absolute right-0 top-10 hidden w-40 rounded border border-gray-400 bg-gray-600 text-m font-normal">
+            <li>
+              <button
+                class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+                <i class="bi bi-pencil-square"></i>
+                <span>Edit post</span>
+              </button>
+            </li>
+
+            <li>
+              <button
+                class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+                <i class="bi bi-trash3"></i>
+                <span>Delete post</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </template>
 
       <template id="modal-template">
