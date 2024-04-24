@@ -1,7 +1,9 @@
 import { DEFAULT_POST_URL } from "../../constants/index.mjs";
 
-export function updatePostImage(postClone, { title, media }) {
+export function updatePostImage(postClone, postData) {
   const postImage = postClone.querySelector(".post-image");
+
+  const { title, media } = postData;
 
   if (!media) {
     postImage.remove();
