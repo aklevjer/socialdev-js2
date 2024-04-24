@@ -2,6 +2,7 @@ import { getTemplateClone } from "../../utils/html/index.mjs";
 import {
   closeModal,
   closeModalOutside,
+  closeModalEscKey,
 } from "../../handlers/ui/modal/index.mjs";
 
 export function createModalTemplate(submitHandler, postData) {
@@ -29,6 +30,7 @@ export function createModalTemplate(submitHandler, postData) {
   modalForm.addEventListener("submit", submitHandler);
   modalCancelBtn.addEventListener("click", closeModal);
   document.addEventListener("click", closeModalOutside);
+  document.addEventListener("keydown", closeModalEscKey);
 
   return {
     modalClone,
