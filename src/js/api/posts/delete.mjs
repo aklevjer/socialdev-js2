@@ -10,5 +10,10 @@ export async function removePost(postId) {
     return { message: `Post with id: ${postId} successfully deleted` };
   }
 
-  throw new Error(`Failed to delete the post with the id: ${postId}`);
+  const responseData = await response.json();
+
+  const errorMessage =
+    responseData?.errors[0]?.message ||
+    `Failed to delete the post with the id: ${postId}`;
+  throw new Error(errorMessage);
 }

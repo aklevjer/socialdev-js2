@@ -1,6 +1,8 @@
-export function updatePostContent(postClone, { id, title, body }) {
+export function updatePostContent(postClone, postData) {
   const postTitle = postClone.querySelector(".post-title");
   const postBody = postClone.querySelector(".post-body");
+
+  const { id, title, body } = postData;
 
   // Title
   postTitle.textContent = title;

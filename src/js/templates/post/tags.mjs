@@ -1,6 +1,8 @@
-export function updatePostTags(postClone, { tags }) {
+export function updatePostTags(postClone, postData) {
   const postTagList = postClone.querySelector(".post-tags");
   const postTag = postClone.querySelector(".post-tag");
+
+  const { tags } = postData;
 
   if (!tags.length || tags.every((tag) => !tag.trim())) {
     postTagList.remove();
