@@ -20,12 +20,20 @@
     <script type="module" src="/src/js/index.mjs"></script>
   </head>
   <body class="bg-gray-800 font-light text-gray-200">
-    <header class="sticky top-0 border-b border-gray-500 bg-gray-700">
+    <header class="sticky top-0 z-10 border-b border-gray-500 bg-gray-700">
       <div class="container flex items-center justify-between py-4">
         <a href="/feed/" class="flex items-center gap-2 py-1">
           <img src="/src/assets/svg/logo.svg" alt="SocialDev logo" />
           <span class="font-mono text-2xl text-gray-100">SocialDev</span>
         </a>
+
+        <button
+          id="nav-btn"
+          class="size-10 rounded-md border border-gray-400 text-2xl active:scale-95 md:hidden"
+          aria-expanded="false"
+          aria-label="Menu">
+          <i class="bi bi-list"></i>
+        </button>
 
         <nav
           id="nav"
@@ -60,14 +68,6 @@
             </li>
           </ul>
         </nav>
-
-        <button
-          class="size-10 rounded-md border border-gray-400 text-2xl active:scale-95 md:hidden"
-          id="nav-btn"
-          aria-expanded="false"
-          aria-label="Menu">
-          <i class="bi bi-list"></i>
-        </button>
       </div>
     </header>
 
