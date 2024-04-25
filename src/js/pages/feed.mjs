@@ -1,16 +1,18 @@
 import { getPosts } from "../api/posts/index.mjs";
-import { createPostTemplate } from "../templates/post/index.mjs";
-import { setCreatePostListener } from "../handlers/posts/index.mjs";
+import { showAlert } from "../handlers/ui/index.mjs";
+import {
+  renderPosts,
+  setCreatePostListener,
+} from "../handlers/posts/index.mjs";
 
 export async function feedPage() {
-  const feedList = document.querySelector("#feed-list");
+  const feedContainer = document.querySelector("#feed-posts");
 
   try {
     const allPosts = await getPosts();
-    const createdPosts = allPosts.data.map(createPostTemplate);
-    feedList.append(...createdPosts);
+    renderPosts(allPosts.data, feedContainer);
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message, feedContainer);
   }
 
   setCreatePostListener();
