@@ -1,4 +1,5 @@
-import { createPost } from "../../api/posts/index.mjs";
+import { createPost, getPostById } from "../../api/posts/index.mjs";
+import { renderSinglePost } from "./index.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
@@ -30,7 +31,11 @@ async function handleCreatePost(event) {
   };
 
   try {
-    await createPost(newPost);
+    const createdPost = await createPost(newPost);
+    const fullPost = await getPostById(createdPost.data.id);
+    const feedContainer = document.querySelector("#feed-posts");
+
+    renderSinglePost(fullPost.data, feedContainer);
     closeModal();
   } catch (error) {
     const formMsg = document.querySelector("#form-message");
