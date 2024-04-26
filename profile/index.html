@@ -135,49 +135,8 @@
       </aside>
 
       <div class="col-span-12 md:col-span-8">
-        <section class="mb-8 rounded-md border border-gray-500 bg-gray-700">
-          <img
-            src="/src/assets/img/default-banner.jpg"
-            alt="Snow covered mountains under blue sky during night time"
-            class="h-[200px] w-full rounded-t-md object-cover" />
-
-          <div class="mx-6 flex flex-col items-center sm:flex-row">
-            <img
-              src="/src/assets/img/default-avatar.jpg"
-              alt="Large avatar for username"
-              class="-mt-12 size-28 rounded-full border-2 border-gray-400 object-cover" />
-
-            <h1 class="m-3 text-3xl font-semibold text-gray-100">Username</h1>
-
-            <button
-              class="space-x-1 rounded-md bg-blue-600 px-3 py-2 font-normal text-white transition-colors hover:bg-opacity-80 sm:ms-auto">
-              <i class="bi-person-plus-fill"></i>
-              <span>Follow</span>
-            </button>
-          </div>
-
-          <div
-            class="m-6 mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-start">
-            <div>
-              <strong class="font-semibold text-gray-100">0</strong>
-              <span>Followers</span>
-            </div>
-
-            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
-
-            <div>
-              <strong class="font-semibold text-gray-100">0</strong>
-              <span>Following</span>
-            </div>
-
-            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
-
-            <div>
-              <strong class="font-semibold text-gray-100">0</strong>
-              <span>Posts</span>
-            </div>
-          </div>
-        </section>
+        <div id="profile-card"></div>
+        <div id="profile-posts" class="overflow-wrap-anywhere space-y-6"></div>
       </div>
     </main>
 
@@ -351,6 +310,56 @@
           <i class="alert-icon"></i>
           <p class="alert-message"></p>
         </div>
+      </template>
+
+      <template id="profile-template">
+        <section class="mb-8 rounded-md border border-gray-500 bg-gray-700">
+          <img
+            src=""
+            alt=""
+            class="profile-banner h-[200px] w-full rounded-t-md object-cover" />
+
+          <div class="mx-6 flex flex-col items-center sm:flex-row">
+            <img
+              src=""
+              alt=""
+              class="profile-avatar -mt-12 size-28 rounded-full border-2 border-gray-400 object-cover" />
+
+            <h1
+              class="profile-name m-3 text-3xl font-semibold text-gray-100"></h1>
+
+            <button
+              class="profile-btn space-x-1 rounded-md bg-blue-600 px-3 py-2 font-normal text-white transition-colors hover:bg-opacity-80 sm:ms-auto">
+              <i class="profile-btn-icon"></i>
+              <span class="profile-btn-text"></span>
+            </button>
+          </div>
+
+          <div
+            class="m-6 mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-start">
+            <div>
+              <strong
+                class="profile-followers font-semibold text-gray-100"></strong>
+              <span>Followers</span>
+            </div>
+
+            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
+
+            <div>
+              <strong
+                class="profile-following font-semibold text-gray-100"></strong>
+              <span>Following</span>
+            </div>
+
+            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
+
+            <div>
+              <strong
+                class="profile-posts font-semibold text-gray-100"></strong>
+              <span>Posts</span>
+            </div>
+          </div>
+        </section>
       </template>
     </div>
   </body>
