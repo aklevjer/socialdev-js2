@@ -4,10 +4,10 @@ export async function handleRemovePost(postId) {
   try {
     await removePost(postId);
 
-    const oldPost = document.querySelector(`#post-${postId}`);
+    const oldPostContainer = document.querySelector(`#post-${postId}`);
 
-    if (oldPost) {
-      oldPost.remove();
+    if (oldPostContainer) {
+      oldPostContainer.remove();
     }
   } catch (error) {
     console.error(error);
