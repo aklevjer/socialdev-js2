@@ -1,6 +1,7 @@
-import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
-import { createDropdownTemplate } from "../ui/index.mjs";
 import * as storage from "../../utils/storage/index.mjs";
+import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
+import { formatDate } from "../../utils/format/index.mjs";
+import { createDropdownTemplate } from "../ui/index.mjs";
 
 export function updatePostHeader(postClone, postData) {
   const postHeader = postClone.querySelector(".post-header");
@@ -23,12 +24,7 @@ export function updatePostHeader(postClone, postData) {
   postProfileLink.href = `/profile/?user=${author.name}`;
 
   // Post date
-  const formattedDate = new Date(created).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-  postDate.textContent = formattedDate;
+  postDate.textContent = formatDate(created);
   postDate.setAttribute("datetime", created);
 
   // Dropdown
