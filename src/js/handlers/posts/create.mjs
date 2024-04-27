@@ -1,4 +1,5 @@
 import { createPost, getPostById } from "../../api/posts/index.mjs";
+import { formatTags, formatMedia } from "../../utils/format/index.mjs";
 import { renderSinglePost } from "./index.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
@@ -14,14 +15,8 @@ async function handleCreatePost(event) {
   const tagsString = formData.get("tags");
   const mediaUrl = formData.get("url");
 
-  const tags = tagsString.replaceAll(",", " ").split(" ").filter(Boolean);
-
-  const media = mediaUrl
-    ? {
-        url: mediaUrl,
-        alt: `Image from ${title}`,
-      }
-    : null;
+  const tags = formatTags(tagsString);
+  const media = formatMedia(title, mediaUrl);
 
   const newPost = {
     title,
