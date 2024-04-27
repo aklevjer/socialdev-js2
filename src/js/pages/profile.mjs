@@ -13,6 +13,7 @@ export async function profilePage({ user }) {
 
   try {
     const profile = await getProfileByName(profileName);
+    document.title = `SocialDev - ${profile.data.name}`;
     renderProfile(profile.data, profileContainer);
   } catch (error) {
     showAlert("error", error.message, profileContainer);

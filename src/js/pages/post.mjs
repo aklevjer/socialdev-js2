@@ -3,7 +3,7 @@ import { showAlert } from "../handlers/ui/index.mjs";
 import { renderSinglePost } from "../handlers/posts/index.mjs";
 
 export async function postPage({ id }) {
-  if (!id || isNaN(id)) {
+  if (!id || Number.isNaN(Number(id))) {
     location.href = "/feed/";
     return;
   }
@@ -12,6 +12,7 @@ export async function postPage({ id }) {
 
   try {
     const singlePost = await getPostById(id);
+    document.title = `SocialDev - ${singlePost.data.title}`;
     renderSinglePost(singlePost.data, singleContainer);
   } catch (error) {
     showAlert("error", error.message, singleContainer);
