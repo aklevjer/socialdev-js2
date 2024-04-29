@@ -1,8 +1,10 @@
 import { authFetch } from "../index.mjs";
 import { API_POSTS_URL, API_PARAMS_POSTS } from "../../constants/index.mjs";
 
-export async function getPosts() {
-  const response = await authFetch(API_POSTS_URL + API_PARAMS_POSTS);
+export async function getPosts(page = 1, limit = 50) {
+  const response = await authFetch(
+    `${API_POSTS_URL}${API_PARAMS_POSTS}&page=${page}&limit=${limit}`,
+  );
 
   const responseData = await response.json();
 
