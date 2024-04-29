@@ -149,10 +149,8 @@
         </div>
 
         <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:justify-between">
-          <div class="space-y-2">
-            <label for="search" class="block text-m font-medium">
-              Search feed
-            </label>
+          <div class="space-y-2 sm:basis-52">
+            <label for="search" class="text-m font-medium">Search feed</label>
 
             <div class="relative">
               <i
@@ -161,24 +159,22 @@
               <input
                 type="search"
                 id="search"
-                name="search"
                 class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 pl-8 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
                 placeholder="Enter keywords.." />
             </div>
           </div>
 
-          <div class="space-y-2">
-            <label for="sort" class="block text-m font-medium">Sort by</label>
+          <div class="space-y-2 sm:basis-52">
+            <label for="filter" class="text-m font-medium">Filter by tag</label>
 
             <select
-              class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none focus:border-blue-600 sm:w-auto"
-              id="sort">
-              <option value="date-latest">Date (Latest)</option>
-              <option value="date-oldest">Date (Oldest)</option>
-              <option value="likes-most">Likes (Most)</option>
-              <option value="likes-least">Likes (Least)</option>
-              <option value="comments-most">Comments (Most)</option>
-              <option value="comments-least">Comments (Least)</option>
+              class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none focus:border-blue-600"
+              id="filter">
+              <option value="All">All</option>
+              <option value="HTML">HTML</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="CSS">CSS</option>
+              <option value="Tailwind">Tailwind</option>
             </select>
           </div>
         </div>
