@@ -1,6 +1,7 @@
 import { getPostById } from "../api/posts/index.mjs";
-import { showAlert } from "../handlers/ui/index.mjs";
 import { renderSinglePost } from "../handlers/posts/index.mjs";
+import { setPageTitle } from "../utils/misc/index.mjs";
+import { showAlert } from "../handlers/ui/index.mjs";
 
 export async function postPage({ id }) {
   if (!id || Number.isNaN(Number(id))) {
@@ -12,7 +13,7 @@ export async function postPage({ id }) {
 
   try {
     const singlePost = await getPostById(id);
-    document.title = `SocialDev - ${singlePost.data.title}`;
+    setPageTitle(singlePost.data.title);
     renderSinglePost(singlePost.data, singleContainer);
   } catch (error) {
     showAlert("error", error.message, singleContainer);

@@ -1,5 +1,6 @@
 import * as storage from "../utils/storage/index.mjs";
 import { getProfileByName, getPostsByProfile } from "../api/profiles/index.mjs";
+import { setPageTitle } from "../utils/misc/index.mjs";
 import { renderProfile } from "../handlers/profiles/index.mjs";
 import { renderPosts } from "../handlers/posts/index.mjs";
 import { showAlert } from "../handlers/ui/index.mjs";
@@ -13,7 +14,7 @@ export async function profilePage({ user }) {
 
   try {
     const profile = await getProfileByName(profileName);
-    document.title = `SocialDev - ${profile.data.name}`;
+    setPageTitle(profile.data.name);
     renderProfile(profile.data, profileContainer);
   } catch (error) {
     showAlert("error", error.message, profileContainer);
