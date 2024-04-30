@@ -13,6 +13,12 @@ export const feedHandler = (function () {
   async function loadPosts() {
     try {
       const posts = await fetchCallback(...fetchParams, currentPage);
+
+      if (!posts.data.length) {
+        showAlert("info", "No posts found", feedContainer);
+        return;
+      }
+
       renderPosts(posts.data, feedContainer);
 
       feedObserver.observeLastPost(
