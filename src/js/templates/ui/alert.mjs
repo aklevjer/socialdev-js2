@@ -8,8 +8,8 @@ export function createAlertTemplate(alertType, alertMessage) {
 
   const isError = alertType === "error";
 
-  alertContainer.classList.add(isError ? "bg-red-900" : "bg-green-900");
-  alertIcon.classList.add("bi", isError ? "bi-x-circle" : "bi-check-circle");
+  alertContainer.classList.add(isError ? "bg-red-900" : "bg-gray-600");
+  alertIcon.classList.add("bi", isError ? "bi-x-circle" : "bi-info-circle");
   alertMsg.textContent = alertMessage;
 
   return alertClone;
