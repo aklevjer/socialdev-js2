@@ -9,8 +9,12 @@ export const API_SOCIAL = "/social";
 export const API_POSTS = "/posts";
 export const API_PROFILES = "/profiles";
 export const API_SEARCH = "/search";
+export const API_FOLLOW = "/follow";
+export const API_UNFOLLOW = "/unfollow";
 
 export const API_PARAMS_POSTS = "?_author=true&_comments=true&_reactions=true";
+export const API_PARAMS_PROFILES =
+  "?_following=true&_followers=true&_posts=true";
 
 export const API_REGISTER_URL = API_BASE + API_AUTH + API_REGISTER;
 export const API_LOGIN_URL = API_BASE + API_AUTH + API_LOGIN;
