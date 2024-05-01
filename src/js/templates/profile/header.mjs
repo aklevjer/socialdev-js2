@@ -1,5 +1,6 @@
 import * as storage from "../../utils/storage/index.mjs";
 import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
+import { handleFollowProfile } from "../../handlers/profiles/index.mjs";
 
 export function updateProfileHeader(profileClone, profileData) {
   const profileAvatar = profileClone.querySelector(".profile-avatar");
@@ -8,7 +9,13 @@ export function updateProfileHeader(profileClone, profileData) {
   const profileBtnIcon = profileClone.querySelector(".profile-btn-icon");
   const profileBtnText = profileClone.querySelector(".profile-btn-text");
 
-  const { name, avatar } = profileData;
+  const { name, avatar, followers } = profileData;
+  const { name: loggedInUser } = storage.get("profile");
+
+  const isOwner = name === loggedInUser;
+  const isFollowing = followers.some(
+    (follower) => follower.name === loggedInUser,
+  );
 
   // Profile avatar
   profileAvatar.src = avatar.url || DEFAULT_AVATAR_URL;
@@ -22,8 +29,15 @@ export function updateProfileHeader(profileClone, profileData) {
   profileName.textContent = name;
 
   // Profile button
-  const { name: username } = storage.get("profile");
-  const isOwner = name === username;
-  profileBtnIcon.className = `bi ${isOwner ? "bi-person-fill-gear" : "bi-person-plus-fill"}`;
-  profileBtnText.textContent = isOwner ? "Edit" : "Follow";
+  if (isOwner) {
+    profileBtnIcon.className = "bi bi-person-fill-gear";
+    profileBtnText.textContent = "Edit";
+  } else {
+    profileBtnIcon.className = `bi ${isFollowing ? "bi-person-dash-fill" : "bi-person-plus-fill"}`;
+    profileBtnText.textContent = isFollowing ? "Unfollow" : "Follow";
+
+    profileBtn.addEventListener("click", (event) =>
+      handleFollowProfile(event, name),
+    );
+  }
 }
