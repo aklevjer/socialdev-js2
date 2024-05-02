@@ -6,7 +6,7 @@ import {
   closeModalEscKey,
 } from "../../../handlers/ui/modal/index.mjs";
 
-export function createModalTemplate(modalType, submitHandler, modalData) {
+export function createModalTemplate(modalType, submitCallback, modalData) {
   const modalClone = getTemplateClone("modal");
   const modal = modalClone.querySelector(".modal");
   const modalForm = modalClone.querySelector(".modal-form");
@@ -23,7 +23,7 @@ export function createModalTemplate(modalType, submitHandler, modalData) {
     modalProfileInputs.remove();
   }
 
-  modalForm.addEventListener("submit", submitHandler);
+  modalForm.addEventListener("submit", submitCallback);
   modalCancelBtn.addEventListener("click", closeModal);
   document.addEventListener("click", closeModalOutside);
   document.addEventListener("keydown", closeModalEscKey);
