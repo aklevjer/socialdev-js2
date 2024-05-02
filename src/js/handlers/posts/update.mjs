@@ -13,7 +13,7 @@ export async function handleUpdatePost(event, postId) {
   const title = formData.get("title");
   const body = formData.get("body");
   const tagsString = formData.get("tags");
-  const mediaUrl = formData.get("url");
+  const mediaUrl = formData.get("mediaurl");
 
   const tags = formatTags(tagsString);
   const media = formatMedia(title, mediaUrl);

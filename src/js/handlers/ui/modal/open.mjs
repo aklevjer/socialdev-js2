@@ -1,7 +1,11 @@
-import { createModalTemplate } from "../../../templates/ui/index.mjs";
+import { createModalTemplate } from "../../../templates/ui/modal/index.mjs";
 
-export function openModal(submitHandler, postData = {}) {
-  const { modalClone, modal } = createModalTemplate(submitHandler, postData);
+export function openModal(modalType, submitCallback, modalData = {}) {
+  const { modalClone, modal } = createModalTemplate(
+    modalType,
+    submitCallback,
+    modalData,
+  );
 
   document.body.append(modalClone);
   document.body.classList.add("overflow-hidden");
