@@ -1,14 +1,17 @@
 import { getPosts } from "../api/posts/index.mjs";
-import { setCreatePostListener } from "../handlers/posts/index.mjs";
 import {
-  feedHandler,
+  PostsHandler,
   setSearchListener,
   setFilterListener,
-} from "../handlers/feed/index.mjs";
+  setCreatePostListener,
+} from "../handlers/posts/index.mjs";
 
 export function feedPage() {
-  feedHandler.setCallback(getPosts);
+  const feedContainer = document.querySelector("#feed-posts");
+  const feedPostsHandler = new PostsHandler(feedContainer);
+  feedPostsHandler.setCallback(getPosts);
+
+  setSearchListener(feedPostsHandler);
+  setFilterListener(feedPostsHandler);
   setCreatePostListener();
-  setSearchListener();
-  setFilterListener();
 }
