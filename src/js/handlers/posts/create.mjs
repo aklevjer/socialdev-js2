@@ -13,7 +13,7 @@ async function handleCreatePost(event) {
   const title = formData.get("title");
   const body = formData.get("body");
   const tagsString = formData.get("tags");
-  const mediaUrl = formData.get("url");
+  const mediaUrl = formData.get("mediaurl");
 
   const tags = formatTags(tagsString);
   const media = formatMedia(title, mediaUrl);
@@ -42,6 +42,8 @@ export function setCreatePostListener() {
   const createPostBtn = document.querySelector("#create-post-btn");
 
   if (createPostBtn) {
-    createPostBtn.addEventListener("click", () => openModal(handleCreatePost));
+    createPostBtn.addEventListener("click", () =>
+      openModal("createPost", handleCreatePost),
+    );
   }
 }

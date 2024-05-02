@@ -15,7 +15,11 @@ export function createDropdownTemplate(postData) {
   dropdownBtn.addEventListener("click", openDropdown);
   delPostBtn.addEventListener("click", () => handleRemovePost(postData.id));
   editPostBtn.addEventListener("click", () => {
-    openModal((event) => handleUpdatePost(event, postData.id), postData);
+    openModal(
+      "editPost",
+      (event) => handleUpdatePost(event, postData.id),
+      postData,
+    );
   });
 
   return dropdownClone;

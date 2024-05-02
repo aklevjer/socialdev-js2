@@ -237,58 +237,94 @@
         <dialog
           class="modal w-full max-w-xl bg-transparent backdrop:bg-black/50">
           <section
-            class="mx-4 rounded-md border border-gray-500 bg-gray-700 px-4 py-8 text-gray-200 sm:px-10">
+            class="mx-4 space-y-6 rounded-md border border-gray-500 bg-gray-700 px-4 py-8 text-gray-200 sm:px-10">
             <h2
-              class="modal-title mb-6 text-xl font-semibold capitalize text-gray-100"></h2>
+              class="modal-title text-xl font-semibold capitalize text-gray-100"></h2>
 
-            <div id="form-message" class="mb-6"></div>
+            <div id="form-message"></div>
 
             <form class="modal-form space-y-6">
-              <div class="space-y-2">
-                <label for="title" class="text-m font-medium">Title</label>
-                <input
-                  type="text"
-                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
-                  id="title"
-                  name="title"
-                  placeholder="Title"
-                  required
-                  maxlength="280"
-                  title="Title is required" />
+              <div class="modal-post-inputs space-y-6">
+                <div class="space-y-2">
+                  <label for="title" class="text-m font-medium">Title</label>
+                  <input
+                    type="text"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="title"
+                    name="title"
+                    placeholder="Title"
+                    required
+                    maxlength="280"
+                    title="Title is required" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="mediaurl" class="text-m font-medium">
+                    Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="mediaurl"
+                    name="mediaurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="tags" class="text-m font-medium">Tags</label>
+                  <input
+                    type="text"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="tags"
+                    name="tags"
+                    placeholder="i.e. HTML CSS Tailwind"
+                    title="Separate tags with a space, tags can't contain hashtags (#)" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="body" class="text-m font-medium">Text</label>
+                  <textarea
+                    class="min-h-32 w-full resize-none rounded-md border border-gray-400 bg-gray-600 p-2 align-top outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="body"
+                    name="body"
+                    maxlength="280"
+                    placeholder="Write your text here..."></textarea>
+                </div>
               </div>
 
-              <div class="space-y-2">
-                <label for="url" class="text-m font-medium">Image URL</label>
-                <input
-                  type="url"
-                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
-                  id="url"
-                  name="url"
-                  placeholder="https://www.example.com/image.jpg"
-                  pattern="https?://.+"
-                  maxlength="300"
-                  title="Must be a valid, live, and publicly accessible image URL" />
-              </div>
+              <div class="modal-profile-inputs space-y-6">
+                <div class="space-y-2">
+                  <label for="bannerurl" class="text-m font-medium">
+                    Banner Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="bannerurl"
+                    name="bannerurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
 
-              <div class="space-y-2">
-                <label for="tags" class="text-m font-medium">Tags</label>
-                <input
-                  type="text"
-                  class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
-                  id="tags"
-                  name="tags"
-                  placeholder="i.e. HTML CSS Tailwind"
-                  title="Separate tags with a space, tags can't contain hashtags (#)" />
-              </div>
-
-              <div class="space-y-2">
-                <label for="body" class="text-m font-medium">Text</label>
-                <textarea
-                  class="min-h-32 w-full resize-none rounded-md border border-gray-400 bg-gray-600 p-2 align-top outline-none placeholder:text-gray-200/70 focus:border-blue-600"
-                  id="body"
-                  name="body"
-                  maxlength="280"
-                  placeholder="Write your text here..."></textarea>
+                <div class="space-y-2">
+                  <label for="avatarurl" class="text-m font-medium">
+                    Profile Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="avatarurl"
+                    name="avatarurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
               </div>
 
               <div class="flex justify-end gap-4">
@@ -300,7 +336,7 @@
 
                 <button
                   type="submit"
-                  class="modal-post-btn rounded-md bg-blue-600 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80"></button>
+                  class="modal-submit-btn rounded-md bg-blue-600 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80"></button>
               </div>
             </form>
           </section>
