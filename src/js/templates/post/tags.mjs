@@ -19,7 +19,7 @@ export function updatePostTags(postClone, postData) {
     const postTagItem = postTag.cloneNode(true);
     const postTagText = postTagItem.querySelector(".post-tag-text");
 
-    postTagText.textContent = `#${tag}`;
+    postTagText.textContent = `#${tag.replace("#", "")}`;
     postTagList.appendChild(postTagItem);
   }
 }
