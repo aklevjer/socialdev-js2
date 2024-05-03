@@ -11,8 +11,7 @@ export class PostObserver {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this.observer.unobserve(this.lastPost);
-          this.observer.disconnect();
+          this.disconnect();
           this.postsHandler.loadNextPage();
         }
       });
