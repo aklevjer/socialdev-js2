@@ -33,11 +33,14 @@ export function updateProfileHeader(profileClone, profileData) {
   profileName.textContent = name;
 
   // Profile button
+  profileBtnIcon.classList.add("bi");
+
   if (isOwner) {
-    profileBtnIcon.className = "bi bi-person-fill-gear";
+    profileBtnIcon.classList.add("bi-person-fill-gear");
     profileBtnText.textContent = "Edit";
   } else {
-    profileBtnIcon.className = `bi ${isFollowing ? "bi-person-dash-fill" : "bi-person-plus-fill"}`;
+    profileBtnIcon.classList.toggle("bi-person-dash-fill", isFollowing);
+    profileBtnIcon.classList.toggle("bi-person-plus-fill", !isFollowing);
     profileBtnText.textContent = isFollowing ? "Unfollow" : "Follow";
   }
 
