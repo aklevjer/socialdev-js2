@@ -11,6 +11,7 @@ export const API_PROFILES = "/profiles";
 export const API_SEARCH = "/search";
 export const API_FOLLOW = "/follow";
 export const API_UNFOLLOW = "/unfollow";
+export const API_REACT = "/react";
 
 export const API_PARAMS_POSTS = "?_author=true&_comments=true&_reactions=true";
 export const API_PARAMS_PROFILES =

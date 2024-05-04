@@ -1,12 +1,30 @@
-export function updatePostFooter(postClone, postData) {
-  const postLikes = postClone.querySelector(".post-likes");
-  const postComments = postClone.querySelector(".post-comments");
+import { handleReactToPost } from "../../handlers/posts/index.mjs";
+import { hasReacted } from "../../utils/misc/index.mjs";
 
-  const { _count } = postData;
+export function updatePostFooter(postClone, postData, loggedInUser) {
+  const postLikeBtn = postClone.querySelector(".post-like-btn");
+  const postLikeBtnIcon = postClone.querySelector(".post-like-btn-icon");
+  const postLikeBtnText = postClone.querySelector(".post-like-btn-text");
+  const postCommentBtn = postClone.querySelector(".post-comment-btn");
+  const postCommentBtnText = postClone.querySelector(".post-comment-btn-text");
 
-  // Likes
-  postLikes.textContent = `${_count.reactions} Likes`;
+  const { id, _count, reactions } = postData;
+  const hasLiked = hasReacted(reactions, loggedInUser, "❤️");
 
-  // Comments
-  postComments.textContent = `${_count.comments} Comments`;
+  // Like button icon
+  postLikeBtnIcon.classList.add("bi");
+  postLikeBtnIcon.classList.toggle("bi-heart-fill", hasLiked);
+  postLikeBtnIcon.classList.toggle("text-red-400", hasLiked);
+  postLikeBtnIcon.classList.toggle("bi-heart", !hasLiked);
+
+  // Like button text
+  postLikeBtnText.textContent = `${_count.reactions} Likes`;
+
+  // Like button listener
+  postLikeBtn.addEventListener("click", (event) =>
+    handleReactToPost(event, id),
+  );
+
+  // Comment button text
+  postCommentBtnText.textContent = `${_count.comments} Comments`;
 }

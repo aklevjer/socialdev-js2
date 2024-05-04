@@ -2,7 +2,8 @@ import { toggleFollowProfile } from "../../api/index.mjs";
 
 export async function handleFollowProfile(event, profileName) {
   const profileBtn = event.currentTarget;
-  const [profileBtnIcon, profileBtnText] = [...profileBtn.children];
+  const profileBtnIcon = profileBtn.firstElementChild;
+  const profileBtnText = profileBtn.lastElementChild;
   const profileFollowers = document.querySelector(".profile-followers");
 
   const shouldFollow = profileBtnText.textContent === "Follow";
@@ -16,7 +17,8 @@ export async function handleFollowProfile(event, profileName) {
     profileFollowers.textContent = followersCount;
 
     // Button icon
-    profileBtnIcon.className = `bi ${shouldFollow ? "bi-person-dash-fill" : "bi-person-plus-fill"}`;
+    profileBtnIcon.classList.toggle("bi-person-dash-fill", shouldFollow);
+    profileBtnIcon.classList.toggle("bi-person-plus-fill", !shouldFollow);
 
     // Button text
     profileBtnText.textContent = shouldFollow ? "Unfollow" : "Follow";
