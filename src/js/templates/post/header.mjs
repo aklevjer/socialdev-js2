@@ -1,9 +1,8 @@
-import * as storage from "../../utils/storage/index.mjs";
 import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
-import { formatDate } from "../../utils/format/index.mjs";
 import { createDropdownTemplate } from "../ui/index.mjs";
+import { formatDate } from "../../utils/format/index.mjs";
 
-export function updatePostHeader(postClone, postData) {
+export function updatePostHeader(postClone, postData, loggedInUser) {
   const postHeader = postClone.querySelector(".post-header");
   const postAvatar = postClone.querySelector(".post-avatar");
   const postProfileLink = postClone.querySelector(".post-author");
@@ -29,8 +28,7 @@ export function updatePostHeader(postClone, postData) {
 
   // Dropdown
   // Add dropdown if the logged-in user is the author
-  const { name } = storage.get("profile");
-  if (author.name === name) {
+  if (author.name === loggedInUser) {
     const dropdownClone = createDropdownTemplate(postData);
     postHeader.appendChild(dropdownClone);
   }
