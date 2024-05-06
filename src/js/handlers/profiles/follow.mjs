@@ -1,4 +1,5 @@
 import { toggleFollowProfile } from "../../api/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleFollowProfile(event, profileName) {
   const profileBtn = event.currentTarget;
@@ -23,6 +24,6 @@ export async function handleFollowProfile(event, profileName) {
     // Button text
     profileBtnText.textContent = shouldFollow ? "Unfollow" : "Follow";
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message);
   }
 }

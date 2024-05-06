@@ -4,6 +4,7 @@ import { clearElement } from "../../utils/html/index.mjs";
 
 export class PostsHandler {
   constructor(postsContainer) {
+    this.limit = 50;
     this.currentPage = 1;
     this.fetchCallback = null;
     this.fetchParams = null;
@@ -16,6 +17,7 @@ export class PostsHandler {
       const posts = await this.fetchCallback(
         ...this.fetchParams,
         this.currentPage,
+        this.limit,
       );
 
       if (!posts.data.length) {

@@ -1,5 +1,6 @@
 import { reactToPost } from "../../api/posts/index.mjs";
 import { hasUserReacted, getReactionCount } from "../../utils/misc/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleReactToPost(event, postId) {
   const likeBtn = event.currentTarget;
@@ -16,9 +17,9 @@ export async function handleReactToPost(event, postId) {
     likeBtnIcon.classList.toggle("bi-heart", !hasLiked);
 
     // Like count
-    const totalLikes = getReactionCount(reaction.data.reactions);
-    likeBtnText.textContent = `${totalLikes} Likes`;
+    const likeCount = getReactionCount(reaction.data.reactions);
+    likeBtnText.textContent = `${likeCount} Likes`;
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message);
   }
 }

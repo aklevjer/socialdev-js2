@@ -1,5 +1,6 @@
 import { createComment } from "../../api/comments/index.mjs";
 import { reRenderPost } from "../posts/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleCreateComment(event, postId) {
   event.preventDefault();
@@ -15,6 +16,6 @@ export async function handleCreateComment(event, postId) {
     await createComment(postId, newComment);
     await reRenderPost(postId, true);
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message);
   }
 }
