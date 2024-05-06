@@ -1,6 +1,7 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 import { openDropdown } from "../../handlers/ui/dropdown/index.mjs";
 import { openModal } from "../../handlers/ui/modal/index.mjs";
+import { handleRemoveComment } from "../../handlers/comments/index.mjs";
 import {
   handleRemovePost,
   handleUpdatePost,
@@ -30,7 +31,10 @@ export function createDropdownTemplate(dropdownType, dropdownData) {
 
     delCommentBtn.remove();
   } else {
-    // delCommentBtn.addEventListener("click", () => handleRemoveComment(dropdownData.postId, dropdownData.id));
+    delCommentBtn.addEventListener("click", () =>
+      handleRemoveComment(dropdownData.postId, dropdownData.id),
+    );
+
     editPostBtn.remove();
     delPostBtn.remove();
   }

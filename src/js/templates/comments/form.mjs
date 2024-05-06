@@ -1,5 +1,6 @@
 import * as storage from "../../utils/index.mjs";
 import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
+import { handleCreateComment } from "../../handlers/comments/index.mjs";
 
 export function updateCommentForm(commentsClone, postData) {
   const commentForm = commentsClone.querySelector(".comment-form");
@@ -15,7 +16,7 @@ export function updateCommentForm(commentsClone, postData) {
   );
 
   // Comment form
-  // commentForm.addEventListener("submit", (event) =>
-  //   handleCreateComment(event, postData.id),
-  // );
+  commentForm.addEventListener("submit", (event) =>
+    handleCreateComment(event, postData.id),
+  );
 }
