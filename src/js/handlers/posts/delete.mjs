@@ -25,6 +25,6 @@ export async function handleRemovePost(postId) {
       }
     }
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message);
   }
 }
