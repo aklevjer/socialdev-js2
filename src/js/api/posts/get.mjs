@@ -1,7 +1,7 @@
 import { authFetch } from "../index.mjs";
 import { API_POSTS_URL, API_PARAMS_POSTS } from "../../constants/index.mjs";
 
-export async function getPosts(page = 1, limit = 50) {
+export async function getPosts(page, limit) {
   try {
     const response = await authFetch(
       `${API_POSTS_URL}${API_PARAMS_POSTS}&page=${page}&limit=${limit}`,

@@ -27,7 +27,7 @@ export async function getProfileByName(profileName) {
   }
 }
 
-export async function getPostsByProfile(profileName, page = 1, limit = 50) {
+export async function getPostsByProfile(profileName, page, limit) {
   try {
     const response = await authFetch(
       `${API_PROFILES_URL}/${profileName}${API_POSTS}${API_PARAMS_POSTS}&page=${page}&limit=${limit}`,

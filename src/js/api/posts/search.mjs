@@ -1,7 +1,7 @@
 import { authFetch } from "../index.mjs";
 import { API_SEARCH_URL, API_PARAMS_POSTS } from "../../constants/index.mjs";
 
-export async function searchPosts(query, page = 1, limit = 50) {
+export async function searchPosts(query, page, limit) {
   try {
     const response = await authFetch(
       `${API_SEARCH_URL}${API_PARAMS_POSTS}&q=${query}&page=${page}&limit=${limit}`,
