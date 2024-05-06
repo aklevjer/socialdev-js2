@@ -16,7 +16,7 @@ export async function postPage({ id }) {
     const singlePost = await getPostById(id);
 
     clearElement(singleContainer);
-    renderSinglePost(singlePost.data, singleContainer);
+    renderSinglePost(singlePost.data, singleContainer, true);
     setPageTitle(singlePost.data.title);
   } catch (error) {
     showAlert("error", error.message, singleContainer);
