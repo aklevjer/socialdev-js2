@@ -249,30 +249,32 @@
       <template id="dropdown-template">
         <div class="relative ml-auto">
           <button
-            class="dropdown-btn size-9 rounded text-xl transition-colors hover:bg-gray-400"
+            class="dropdown-btn size-9 rounded-md text-xl transition-colors hover:bg-gray-400"
             aria-expanded="false"
             aria-label="Dropdown">
             <i class="bi bi-three-dots"></i>
           </button>
 
-          <ul
-            class="dropdown absolute right-0 top-10 hidden w-40 rounded border border-gray-400 bg-gray-600 text-m font-normal">
-            <li>
-              <button
-                class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
-                <i class="bi bi-pencil-square"></i>
-                <span>Edit post</span>
-              </button>
-            </li>
+          <div
+            class="dropdown absolute right-0 top-10 hidden w-40 rounded-md border border-gray-400 bg-gray-600 text-sm font-normal">
+            <button
+              class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-pencil-square"></i>
+              <span>Edit post</span>
+            </button>
 
-            <li>
-              <button
-                class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
-                <i class="bi bi-trash3"></i>
-                <span>Delete post</span>
-              </button>
-            </li>
-          </ul>
+            <button
+              class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete post</span>
+            </button>
+
+            <button
+              class="del-comment-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete comment</span>
+            </button>
+          </div>
         </div>
       </template>
 

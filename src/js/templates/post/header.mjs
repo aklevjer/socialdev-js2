@@ -31,7 +31,7 @@ export function updatePostHeader(postClone, postData) {
   // Dropdown
   // Add dropdown if the logged-in user is the author
   if (author.name === name) {
-    const dropdownClone = createDropdownTemplate(postData);
+    const dropdownClone = createDropdownTemplate("post", postData);
     postHeader.appendChild(dropdownClone);
   }
 }

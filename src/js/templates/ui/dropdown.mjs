@@ -6,21 +6,34 @@ import {
   handleUpdatePost,
 } from "../../handlers/posts/index.mjs";
 
-export function createDropdownTemplate(postData) {
+export function createDropdownTemplate(dropdownType, dropdownData) {
   const dropdownClone = getTemplateClone("dropdown");
   const dropdownBtn = dropdownClone.querySelector(".dropdown-btn");
   const editPostBtn = dropdownClone.querySelector(".edit-post-btn");
   const delPostBtn = dropdownClone.querySelector(".del-post-btn");
+  const delCommentBtn = dropdownClone.querySelector(".del-comment-btn");
 
   dropdownBtn.addEventListener("click", openDropdown);
-  delPostBtn.addEventListener("click", () => handleRemovePost(postData.id));
-  editPostBtn.addEventListener("click", () => {
-    openModal(
-      "editPost",
-      (event) => handleUpdatePost(event, postData.id),
-      postData,
+
+  if (dropdownType === "post") {
+    delPostBtn.addEventListener("click", () =>
+      handleRemovePost(dropdownData.id),
     );
-  });
+
+    editPostBtn.addEventListener("click", () => {
+      openModal(
+        "editPost",
+        (event) => handleUpdatePost(event, dropdownData.id),
+        dropdownData,
+      );
+    });
+
+    delCommentBtn.remove();
+  } else {
+    // delCommentBtn.addEventListener("click", () => handleRemoveComment(dropdownData.postId, dropdownData.id));
+    editPostBtn.remove();
+    delPostBtn.remove();
+  }
 
   return dropdownClone;
 }
