@@ -1,14 +1,16 @@
+import * as storage from "../../utils/storage/index.mjs";
 import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
 import { createDropdownTemplate } from "../ui/index.mjs";
 import { formatDate } from "../../utils/format/index.mjs";
 
-export function updatePostHeader(postClone, postData, loggedInUser) {
+export function updatePostHeader(postClone, postData) {
   const postHeader = postClone.querySelector(".post-header");
   const postAvatar = postClone.querySelector(".post-avatar");
   const postProfileLink = postClone.querySelector(".post-author");
   const postDate = postClone.querySelector(".post-date");
 
   const { author, created } = postData;
+  const { name } = storage.get("profile");
 
   // Avatar image
   postAvatar.src = author.avatar.url || DEFAULT_AVATAR_URL;
@@ -28,8 +30,8 @@ export function updatePostHeader(postClone, postData, loggedInUser) {
 
   // Dropdown
   // Add dropdown if the logged-in user is the author
-  if (author.name === loggedInUser) {
-    const dropdownClone = createDropdownTemplate(postData);
+  if (author.name === name) {
+    const dropdownClone = createDropdownTemplate("post", postData);
     postHeader.appendChild(dropdownClone);
   }
 }

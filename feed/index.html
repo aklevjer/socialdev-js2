@@ -246,33 +246,89 @@
         </article>
       </template>
 
+      <template id="comments-template">
+        <div class="comment-section grid gap-4">
+          <hr class="my-2 border-gray-400" />
+
+          <ul class="comments-list space-y-4">
+            <li class="comment space-y-4 rounded-md bg-gray-600 p-4">
+              <div class="comment-header flex flex-wrap items-center gap-2">
+                <img
+                  src=""
+                  alt=""
+                  class="comment-avatar size-12 rounded-full object-cover" />
+
+                <div>
+                  <a
+                    href=""
+                    class="comment-author font-medium text-gray-100 transition-colors hover:text-opacity-80">
+                  </a>
+                  <time
+                    datetime=""
+                    class="comment-date block text-sm text-gray-200 text-opacity-80">
+                  </time>
+                </div>
+              </div>
+
+              <p class="comment-body"></p>
+            </li>
+          </ul>
+
+          <form class="comment-form mt-2 flex">
+            <img
+              src=""
+              alt=""
+              class="comment-user-avatar mr-2 hidden size-12 rounded-full object-cover sm:block" />
+
+            <label for="comment" class="sr-only">Comment</label>
+            <textarea
+              class="w-full resize-none rounded-s-md border border-gray-400 bg-gray-600 px-2 py-3 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+              id="comment"
+              name="comment"
+              rows="1"
+              placeholder="Write a comment.."
+              required
+              maxlength="280"></textarea>
+
+            <button
+              type="submit"
+              class="rounded-e-md bg-gray-400 px-4 py-2 transition-colors hover:bg-opacity-80"
+              aria-label="Post comment">
+              <i class="bi bi-send"></i>
+            </button>
+          </form>
+        </div>
+      </template>
+
       <template id="dropdown-template">
         <div class="relative ml-auto">
           <button
-            class="dropdown-btn size-9 rounded text-xl transition-colors hover:bg-gray-400"
+            class="dropdown-btn size-9 rounded-md text-xl transition-colors hover:bg-gray-400"
             aria-expanded="false"
             aria-label="Dropdown">
             <i class="bi bi-three-dots"></i>
           </button>
 
-          <ul
-            class="dropdown absolute right-0 top-10 hidden w-40 rounded border border-gray-400 bg-gray-600 text-m font-normal">
-            <li>
-              <button
-                class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
-                <i class="bi bi-pencil-square"></i>
-                <span>Edit post</span>
-              </button>
-            </li>
+          <div
+            class="dropdown absolute right-0 top-10 hidden w-40 rounded-md border border-gray-400 bg-gray-600 text-sm font-normal">
+            <button
+              class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-pencil-square"></i>
+              <span>Edit post</span>
+            </button>
 
-            <li>
-              <button
-                class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
-                <i class="bi bi-trash3"></i>
-                <span>Delete post</span>
-              </button>
-            </li>
-          </ul>
+            <button
+              class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete post</span>
+            </button>
+
+            <button
+              class="del-comment-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete comment</span>
+            </button>
+          </div>
         </div>
       </template>
 

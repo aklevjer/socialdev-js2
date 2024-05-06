@@ -1,6 +1,9 @@
-export function hasReacted(reactions, profileName, symbol) {
+import * as storage from "../storage/index.mjs";
+
+export function hasUserReacted(reactions, symbol) {
+  const { name } = storage.get("profile");
   return reactions.some(
     (reaction) =>
-      reaction.symbol === symbol && reaction.reactors?.includes(profileName),
+      reaction.symbol === symbol && reaction.reactors?.includes(name),
   );
 }
