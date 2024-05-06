@@ -17,8 +17,8 @@ export async function handleReactToPost(event, postId) {
     likeBtnIcon.classList.toggle("bi-heart", !hasLiked);
 
     // Like count
-    const totalLikes = getReactionCount(reaction.data.reactions);
-    likeBtnText.textContent = `${totalLikes} Likes`;
+    const likeCount = getReactionCount(reaction.data.reactions);
+    likeBtnText.textContent = `${likeCount} Likes`;
   } catch (error) {
     showAlert("error", error.message);
   }

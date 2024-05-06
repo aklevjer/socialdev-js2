@@ -1,6 +1,6 @@
 import { getPosts, getPostsByTag } from "../../api/index.mjs";
 
-function handleFilter(event, feedPostsHandler) {
+function handleFilterPosts(event, feedPostsHandler) {
   const selectedTag = event.target.value;
   const showAll = selectedTag === "All";
 
@@ -16,7 +16,7 @@ export function setFilterListener(feedPostsHandler) {
 
   if (filterSelect) {
     filterSelect.addEventListener("change", (event) =>
-      handleFilter(event, feedPostsHandler),
+      handleFilterPosts(event, feedPostsHandler),
     );
   }
 }

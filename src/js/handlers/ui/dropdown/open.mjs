@@ -7,7 +7,7 @@ export function openDropdown(event) {
   const dropdown = dropdownBtn.nextElementSibling;
 
   if (dropdown.classList.contains("hidden")) {
-    closeDropdown(); // Close any previously opened dropdowns
+    closeDropdown(); // Close the currently open dropdown, if any
 
     dropdown.classList.remove("hidden");
     dropdownBtn.setAttribute("aria-expanded", "true");

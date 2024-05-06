@@ -1,7 +1,7 @@
 import { getPosts, searchPosts } from "../../api/index.mjs";
 import { debounce } from "../../utils/misc/index.mjs";
 
-function handleSearch(event, feedPostsHandler) {
+function handleSearchPosts(event, feedPostsHandler) {
   const searchQuery = event.target.value.trim();
 
   if (searchQuery) {
@@ -16,7 +16,7 @@ export function setSearchListener(feedPostsHandler) {
 
   if (searchInput) {
     const processInput = debounce((event) =>
-      handleSearch(event, feedPostsHandler),
+      handleSearchPosts(event, feedPostsHandler),
     );
     searchInput.addEventListener("input", (event) => processInput(event));
   }
