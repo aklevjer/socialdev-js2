@@ -1,5 +1,6 @@
 import { handleReactToPost } from "../../handlers/posts/index.mjs";
 import { hasUserReacted } from "../../utils/misc/index.mjs";
+import { handleToggleComments } from "../../handlers/comments/index.mjs";
 
 export function updatePostFooter(postClone, postData) {
   const postLikeBtn = postClone.querySelector(".post-like-btn");
@@ -27,4 +28,9 @@ export function updatePostFooter(postClone, postData) {
 
   // Comment button text
   postCommentBtnText.textContent = `${_count.comments} Comments`;
+
+  // Comment button listener
+  postCommentBtn.addEventListener("click", () =>
+    handleToggleComments(postData),
+  );
 }
