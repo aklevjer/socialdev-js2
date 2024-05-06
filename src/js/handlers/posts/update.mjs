@@ -1,6 +1,6 @@
-import { updatePost, getPostById } from "../../api/posts/index.mjs";
+import { updatePost } from "../../api/posts/index.mjs";
+import { reRenderPost } from "./index.mjs";
 import { formatTags, formatMedia } from "../../utils/format/index.mjs";
-import { createPostTemplate } from "../../templates/post/index.mjs";
 import { closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
@@ -27,14 +27,7 @@ export async function handleUpdatePost(event, postId) {
 
   try {
     await updatePost(postId, updatedPost);
-
-    const fullPost = await getPostById(postId);
-    const oldPostContainer = document.querySelector(`#post-${postId}`);
-
-    if (oldPostContainer) {
-      const newPostContainer = createPostTemplate(fullPost.data);
-      oldPostContainer.replaceWith(newPostContainer);
-    }
+    await reRenderPost(postId, false);
 
     closeModal();
   } catch (error) {
