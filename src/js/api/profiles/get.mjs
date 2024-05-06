@@ -7,35 +7,44 @@ import {
 } from "../../constants/index.mjs";
 
 export async function getProfileByName(profileName) {
-  const response = await authFetch(
-    `${API_PROFILES_URL}/${profileName}${API_PARAMS_PROFILES}`,
-  );
+  try {
+    const response = await authFetch(
+      `${API_PROFILES_URL}/${profileName}${API_PARAMS_PROFILES}`,
+    );
 
-  const responseData = await response.json();
+    const responseData = await response.json();
 
-  if (response.ok) {
-    return responseData;
+    if (response.ok) {
+      return responseData;
+    }
+
+    const errorMessage =
+      responseData?.errors[0]?.message || "Failed to retrieve the profile";
+
+    throw new Error(errorMessage);
+  } catch (error) {
+    throw error;
   }
-
-  const errorMessage =
-    responseData?.errors[0]?.message ||
-    `Failed to get the profile with the name: ${profileName}`;
-  throw new Error(errorMessage);
 }
 
 export async function getPostsByProfile(profileName, page = 1, limit = 50) {
-  const response = await authFetch(
-    `${API_PROFILES_URL}/${profileName}${API_POSTS}${API_PARAMS_POSTS}&page=${page}&limit=${limit}`,
-  );
+  try {
+    const response = await authFetch(
+      `${API_PROFILES_URL}/${profileName}${API_POSTS}${API_PARAMS_POSTS}&page=${page}&limit=${limit}`,
+    );
 
-  const responseData = await response.json();
+    const responseData = await response.json();
 
-  if (response.ok) {
-    return responseData;
+    if (response.ok) {
+      return responseData;
+    }
+
+    const errorMessage =
+      responseData?.errors[0]?.message ||
+      "Failed to retrieve the posts for the profile";
+
+    throw new Error(errorMessage);
+  } catch (error) {
+    throw error;
   }
-
-  const errorMessage =
-    responseData?.errors[0]?.message ||
-    `Failed to get posts for profile with the name: ${profileName}`;
-  throw new Error(errorMessage);
 }
