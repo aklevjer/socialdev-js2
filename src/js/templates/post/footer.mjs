@@ -1,7 +1,7 @@
 import { handleReactToPost } from "../../handlers/posts/index.mjs";
-import { hasReacted } from "../../utils/misc/index.mjs";
+import { hasUserReacted } from "../../utils/misc/index.mjs";
 
-export function updatePostFooter(postClone, postData, loggedInUser) {
+export function updatePostFooter(postClone, postData) {
   const postLikeBtn = postClone.querySelector(".post-like-btn");
   const postLikeBtnIcon = postClone.querySelector(".post-like-btn-icon");
   const postLikeBtnText = postClone.querySelector(".post-like-btn-text");
@@ -9,7 +9,7 @@ export function updatePostFooter(postClone, postData, loggedInUser) {
   const postCommentBtnText = postClone.querySelector(".post-comment-btn-text");
 
   const { id, _count, reactions } = postData;
-  const hasLiked = hasReacted(reactions, loggedInUser, "❤️");
+  const hasLiked = hasUserReacted(reactions, "❤️");
 
   // Like button icon
   postLikeBtnIcon.classList.add("bi");

@@ -1,17 +1,14 @@
-import * as storage from "../../utils/storage/index.mjs";
 import { reactToPost } from "../../api/posts/index.mjs";
-import { hasReacted, getReactionCount } from "../../utils/misc/index.mjs";
+import { hasUserReacted, getReactionCount } from "../../utils/misc/index.mjs";
 
 export async function handleReactToPost(event, postId) {
   const likeBtn = event.currentTarget;
   const likeBtnIcon = likeBtn.firstElementChild;
   const likeBtnText = likeBtn.lastElementChild;
 
-  const { name: loggedInUser } = storage.get("profile");
-
   try {
     const reaction = await reactToPost(postId);
-    const hasLiked = hasReacted(reaction.data.reactions, loggedInUser, "❤️");
+    const hasLiked = hasUserReacted(reaction.data.reactions, "❤️");
 
     // Like icon
     likeBtnIcon.classList.toggle("bi-heart-fill", hasLiked);
