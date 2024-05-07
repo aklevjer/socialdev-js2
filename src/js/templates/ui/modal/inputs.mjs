@@ -1,15 +1,30 @@
-export function updateModalInputs(modalForm, modalType, modalData) {
-  if (modalType === "editPost") {
-    const { title, body, tags, media } = modalData;
+export function updateModalInputs(modalClone, modalType, modalData) {
+  const modalForm = modalClone.querySelector(".modal-form");
+  const modalPostInputs = modalClone.querySelector(".modal-post-inputs");
+  const modalProfileInputs = modalClone.querySelector(".modal-profile-inputs");
 
-    modalForm.title.value = title;
-    modalForm.mediaurl.value = media?.url || "";
-    modalForm.tags.value = tags.join(" ") || "";
-    modalForm.body.value = body || "";
-  } else if (modalType === "editProfile") {
-    const { banner, avatar } = modalData;
+  switch (modalType) {
+    case "editPost":
+      const { title, body, tags, media } = modalData;
 
-    modalForm.bannerurl.value = banner.url;
-    modalForm.avatarurl.value = avatar.url;
+      modalForm.title.value = title;
+      modalForm.mediaurl.value = media?.url || "";
+      modalForm.tags.value = tags.join(" ") || "";
+      modalForm.body.value = body || "";
+
+      modalProfileInputs.remove();
+      break;
+
+    case "editProfile":
+      const { banner, avatar } = modalData;
+
+      modalForm.bannerurl.value = banner.url;
+      modalForm.avatarurl.value = avatar.url;
+
+      modalPostInputs.remove();
+      break;
+
+    default:
+      modalProfileInputs.remove();
   }
 }

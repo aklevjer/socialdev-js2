@@ -1,11 +1,8 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 import { openDropdown } from "../../handlers/ui/dropdown/index.mjs";
 import { openModal } from "../../handlers/ui/modal/index.mjs";
+import { handleRemovePost } from "../../handlers/posts/index.mjs";
 import { handleRemoveComment } from "../../handlers/comments/index.mjs";
-import {
-  handleRemovePost,
-  handleUpdatePost,
-} from "../../handlers/posts/index.mjs";
 
 export function createDropdownTemplate(dropdownType, dropdownData) {
   const dropdownClone = getTemplateClone("dropdown");
@@ -21,13 +18,9 @@ export function createDropdownTemplate(dropdownType, dropdownData) {
       handleRemovePost(dropdownData.id),
     );
 
-    editPostBtn.addEventListener("click", () => {
-      openModal(
-        "editPost",
-        (event) => handleUpdatePost(event, dropdownData.id),
-        dropdownData,
-      );
-    });
+    editPostBtn.addEventListener("click", () =>
+      openModal("editPost", dropdownData),
+    );
 
     delCommentBtn.remove();
   } else {
