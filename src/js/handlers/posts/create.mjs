@@ -4,7 +4,7 @@ import { renderSinglePost } from "./index.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
-async function handleCreatePost(event) {
+export async function handleCreatePost(event) {
   event.preventDefault();
 
   const createPostForm = event.target;
@@ -42,8 +42,6 @@ export function setCreatePostListener() {
   const createPostBtn = document.querySelector("#create-post-btn");
 
   if (createPostBtn) {
-    createPostBtn.addEventListener("click", () =>
-      openModal("createPost", handleCreatePost),
-    );
+    createPostBtn.addEventListener("click", () => openModal("createPost"));
   }
 }

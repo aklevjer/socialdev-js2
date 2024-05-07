@@ -1,10 +1,7 @@
 import * as storage from "../../utils/storage/index.mjs";
 import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
 import { openModal } from "../../handlers/ui/index.mjs";
-import {
-  handleUpdateProfile,
-  handleFollowProfile,
-} from "../../handlers/profiles/index.mjs";
+import { handleFollowProfile } from "../../handlers/profiles/index.mjs";
 
 export function updateProfileHeader(profileClone, profileData) {
   const profileAvatar = profileClone.querySelector(".profile-avatar");
@@ -46,7 +43,7 @@ export function updateProfileHeader(profileClone, profileData) {
 
   profileBtn.addEventListener("click", (event) => {
     if (isOwner) {
-      openModal("editProfile", handleUpdateProfile, storage.get("profile"));
+      openModal("editProfile", storage.get("profile"));
     } else {
       handleFollowProfile(event, name);
     }
