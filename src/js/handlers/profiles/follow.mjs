@@ -1,6 +1,12 @@
 import { toggleFollowProfile } from "../../api/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Handles toggling follow/unfollow a profile.
+ *
+ * @param {Event} event - The event object representing the follow/unfollow button click event.
+ * @param {string} profileName - The profile name to follow/unfollow.
+ */
 export async function handleFollowProfile(event, profileName) {
   const profileBtn = event.currentTarget;
   const profileBtnIcon = profileBtn.firstElementChild;

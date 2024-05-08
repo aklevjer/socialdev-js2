@@ -1,3 +1,8 @@
+/**
+ * Toggles the display of the navigation.
+ *
+ * @param {Event} event - The event object representing the navigation button click event.
+ */
 function toggleNav(event) {
   const navBtn = event.currentTarget;
   const menuIcon = navBtn.firstElementChild;
@@ -11,6 +16,9 @@ function toggleNav(event) {
   nav.classList.toggle("hidden", isExpanded);
 }
 
+/**
+ * Sets an event listener for the navigation button to trigger the toggle navigation.
+ */
 export function setNavListener() {
   const navBtn = document.querySelector("#nav-btn");
 

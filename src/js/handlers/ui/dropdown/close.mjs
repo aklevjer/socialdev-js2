@@ -1,3 +1,6 @@
+/**
+ * Handles closing a dropdown.
+ */
 export function closeDropdown() {
   const openDropdown = document.querySelector(".dropdown:not(.hidden)");
 

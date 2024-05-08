@@ -1,6 +1,11 @@
 import { login } from "../../api/auth/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Logs in to an account when the login form is submitted.
+ *
+ * @param {Event} event - The event object representing the login form submission.
+ */
 async function handleLogin(event) {
   event.preventDefault();
 
@@ -17,6 +22,9 @@ async function handleLogin(event) {
   }
 }
 
+/**
+ * Sets a event listener for the login form submission.
+ */
 export function setLoginListener() {
   const loginForm = document.forms.login;
 

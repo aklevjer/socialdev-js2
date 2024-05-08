@@ -1,6 +1,11 @@
 import { removePost } from "../../api/posts/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Handles the deletion of a post.
+ *
+ * @param {number} postId - The id of the post.
+ */
 export async function handleRemovePost(postId) {
   try {
     await removePost(postId);

@@ -1,5 +1,10 @@
 import { closeDropdown } from "./index.mjs";
 
+/**
+ * Handles opening a dropdown, closing any other open dropdowns if present.
+ *
+ * @param {Event} event - The event object representing the dropdown button click event.
+ */
 export function openDropdown(event) {
   event.stopPropagation();
 
