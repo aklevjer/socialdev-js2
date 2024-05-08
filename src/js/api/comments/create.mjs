@@ -1,6 +1,16 @@
 import { authFetch } from "../index.mjs";
 import { API_POSTS_URL, API_COMMENT } from "../../constants/index.mjs";
 
+/**
+ * Creates a comment on a post by sending a POST request to the comment endpoint.
+ *
+ * @param {number} postId - The id of the post.
+ * @param {Object} commentData - The comment data.
+ * @param {string} commentData.body - The body text of a comment.
+ *
+ * @returns {Object} An object containing the created comment and meta data upon successful creation.
+ * @throws {Error} If there is an error during the creation process.
+ */
 export async function createComment(postId, commentData) {
   try {
     const response = await authFetch(
