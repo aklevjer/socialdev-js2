@@ -3,6 +3,12 @@ import { DEFAULT_AVATAR_URL } from "../../constants/index.mjs";
 import { createDropdownTemplate } from "../ui/index.mjs";
 import { formatDate } from "../../utils/format/index.mjs";
 
+/**
+ * Updates the header within a post template.
+ *
+ * @param {DocumentFragment} postClone The cloned post template containing the header.
+ * @param {Object} postData - The data of the post.
+ */
 export function updatePostHeader(postClone, postData) {
   const postHeader = postClone.querySelector(".post-header");
   const postAvatar = postClone.querySelector(".post-avatar");

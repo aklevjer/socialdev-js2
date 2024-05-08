@@ -4,6 +4,13 @@ import { openModal } from "../../handlers/ui/modal/index.mjs";
 import { handleRemovePost } from "../../handlers/posts/index.mjs";
 import { handleRemoveComment } from "../../handlers/comments/index.mjs";
 
+/**
+ * Creates a dropdown template.
+ *
+ * @param {string} dropdownType - The type of dropdown. (i.e. "post", "comment").
+ * @param {Object} dropdownData - The data specific to the dropdown type.
+ * @returns {DocumentFragment} The cloned dropdown template.
+ */
 export function createDropdownTemplate(dropdownType, dropdownData) {
   const dropdownClone = getTemplateClone("dropdown");
   const dropdownBtn = dropdownClone.querySelector(".dropdown-btn");
