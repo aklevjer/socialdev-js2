@@ -1,6 +1,15 @@
 import { authFetch } from "../index.mjs";
 import { API_POSTS_URL, API_PARAMS_POSTS } from "../../constants/index.mjs";
 
+/**
+ * Gets posts by sending a GET request to the posts endpoint.
+ *
+ * @param {number} page - The page of results to retrieve.
+ * @param {number} limit - The maximum number of results per page.
+ *
+ * @returns {Object} An object containing the posts and meta data upon successful retrieval.
+ * @throws {Error} If there is an error during the retrieval process.
+ */
 export async function getPosts(page, limit) {
   try {
     const response = await authFetch(
@@ -22,6 +31,14 @@ export async function getPosts(page, limit) {
   }
 }
 
+/**
+ * Gets a post by it's id by sending a GET request to the posts endpoint.
+ *
+ * @param {number} postId - The id of the post.
+ *
+ * @returns {Object} An object containing the post and meta data upon successful retrieval.
+ * @throws {Error} If there is an error during the retrieval process.
+ */
 export async function getPostById(postId) {
   try {
     const response = await authFetch(

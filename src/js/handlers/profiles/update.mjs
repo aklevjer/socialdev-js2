@@ -3,6 +3,11 @@ import { updateProfile } from "../../api/profiles/index.mjs";
 import { closeModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Updates a profile when the edit profile form is submitted.
+ *
+ * @param {Event} event - The event object representing the edit profile submission.
+ */
 export async function handleUpdateProfile(event) {
   event.preventDefault();
 

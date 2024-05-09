@@ -2,6 +2,12 @@ import { reactToPost } from "../../api/posts/index.mjs";
 import { hasUserReacted, getReactionCount } from "../../utils/misc/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Handles toggling the reaction to a post.
+ *
+ * @param {Event} event - The event object representing the like button click event.
+ * @param {number} postId - The id of the post.
+ */
 export async function handleReactToPost(event, postId) {
   const likeBtn = event.currentTarget;
   const likeBtnIcon = likeBtn.firstElementChild;
