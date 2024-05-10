@@ -5,14 +5,17 @@
  * @param {Object} postData - The data of the post.
  */
 export function updatePostContent(postClone, postData) {
+  const postLink = postClone.querySelector(".post-link");
   const postTitle = postClone.querySelector(".post-title");
   const postBody = postClone.querySelector(".post-body");
 
   const { id, title, body } = postData;
 
+  // Link
+  postLink.href = `/post/?id=${id}`;
+
   // Title
   postTitle.textContent = title;
-  postTitle.href = `/post/?id=${id}`;
 
   // Body text
   if (body) {
