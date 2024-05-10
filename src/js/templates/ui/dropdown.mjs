@@ -9,6 +9,7 @@ import { handleRemoveComment } from "../../handlers/comments/index.mjs";
  *
  * @param {string} dropdownType - The type of dropdown. (i.e. "post", "comment").
  * @param {Object} dropdownData - The data specific to the dropdown type.
+ *
  * @returns {DocumentFragment} The cloned dropdown template.
  */
 export function createDropdownTemplate(dropdownType, dropdownData) {

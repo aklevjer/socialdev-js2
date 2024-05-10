@@ -1,7 +1,7 @@
 /**
  * Updates the content within a post template.
  *
- * @param {DocumentFragment} postClone The cloned post template containing the content.
+ * @param {DocumentFragment} postClone - The cloned post template containing the content.
  * @param {Object} postData - The data of the post.
  */
 export function updatePostContent(postClone, postData) {

@@ -1,7 +1,7 @@
 /**
  * Updates the footer within a profile template.
  *
- * @param {DocumentFragment} profileClone The cloned profile template containing the footer.
+ * @param {DocumentFragment} profileClone - The cloned profile template containing the footer.
  * @param {Object} profileData - The data of the profile.
  */
 export function updateProfileFooter(profileClone, profileData) {

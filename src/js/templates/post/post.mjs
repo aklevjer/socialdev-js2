@@ -7,6 +7,7 @@ import { getTemplateClone } from "../../utils/html/index.mjs";
  *
  * @param {Object} postData - The data of the post.
  * @param {boolean} isFullPost - Indicates if the post should be a full post.
+ *
  * @returns {DocumentFragment} The cloned post template populated.
  */
 export function createPostTemplate(postData, isFullPost) {

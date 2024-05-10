@@ -5,6 +5,7 @@ import * as storage from "../storage/index.mjs";
  *
  * @param {object[]} reactions - The array of reactions check.
  * @param {string} symbol - The symbol to check for.
+ *
  * @returns {boolean} Indicates whether or not the logged-in user has reacted to the post.
  */
 export function hasUserReacted(reactions, symbol) {
