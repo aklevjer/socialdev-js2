@@ -3,7 +3,7 @@ import { updateCommentItem } from "./index.mjs";
 /**
  * Updates the comments list within a comments template.
  *
- * @param {DocumentFragment} commentsClone The cloned comments template containing the comments list.
+ * @param {DocumentFragment} commentsClone - The cloned comments template containing the comments list.
  * @param {Object} postData - The data of the post, including comments.
  */
 export function updateCommentList(commentsClone, postData) {

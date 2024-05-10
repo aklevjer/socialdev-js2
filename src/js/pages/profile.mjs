@@ -13,8 +13,8 @@ import { clearElement } from "../utils/html/index.mjs";
  * If no user is provided, it displays the profile and posts of the logged-in user.
  * Sets the page title with the user's name.
  *
- * @param {object} params - An object containing parameters extracted from the URL, including the user.
- * @param {string} params.user - The name of the user. If not provided, the profile of the logged-in user is displayed.
+ * @param {Object} params - An object containing parameters extracted from the URL, including the user.
+ * @param {string} params.user - The name of the user.
  */
 export async function profilePage({ user }) {
   const { name } = storage.get("profile");

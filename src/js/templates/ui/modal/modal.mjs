@@ -11,6 +11,7 @@ import {
  *
  * @param {string} modalType - The type of modal to be created. (i.e. "createPost", "editPost", "editProfile").
  * @param {Object} modalData - The data specific to the modal type.
+ *
  * @returns {Object} An object containing the cloned modal template and the modal element.
  */
 export function createModalTemplate(modalType, modalData) {

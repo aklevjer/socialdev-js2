@@ -82,53 +82,39 @@
           <hr class="mb-6 mt-4 border-gray-400" />
 
           <ul class="grid gap-4 font-medium">
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-pencil-square"></i>
-                <span>Create post</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-globe"></i>
+              <span>Explore</span>
             </li>
 
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-search"></i>
-                <span>Search</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-bookmarks"></i>
+              <span>Favorites</span>
             </li>
 
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-person-lines-fill"></i>
-                <span>Contacts</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-person-lines-fill"></i>
+              <span>Contacts</span>
             </li>
 
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-chat-square-text"></i>
-                <span>Messages</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-chat-square-text"></i>
+              <span>Messages</span>
             </li>
 
-            <li class="mb-8">
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-fire"></i>
-                <span>Trending</span>
-              </a>
+            <li class="mb-8 space-x-1">
+              <i class="bi bi-fire"></i>
+              <span>Trending</span>
             </li>
 
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-gear"></i>
-                <span>Settings</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-gear"></i>
+              <span>Settings</span>
             </li>
 
-            <li>
-              <a href="#" class="space-x-1 transition-colors hover:opacity-75">
-                <i class="bi bi-question-square"></i>
-                <span>Help</span>
-              </a>
+            <li class="space-x-1">
+              <i class="bi bi-question-square"></i>
+              <span>Help</span>
             </li>
           </ul>
         </section>
@@ -165,26 +151,25 @@
             </div>
           </div>
 
-          <div class="space-y-2">
-            <h2 class="text-xl font-semibold">
-              <a
-                href=""
-                class="post-title text-gray-100 transition-colors hover:text-opacity-80"></a>
-            </h2>
+          <a href="" class="post-link group space-y-4">
+            <div class="space-y-2">
+              <h2
+                class="post-title text-xl font-semibold text-gray-100 transition-colors group-hover:text-opacity-80"></h2>
 
-            <p class="post-body"></p>
-          </div>
+              <p class="post-body"></p>
+            </div>
 
-          <ul class="post-tags flex flex-wrap gap-2">
-            <li class="post-tag">
-              <span class="post-tag-text text-blue-400"></span>
-            </li>
-          </ul>
+            <ul class="post-tags flex flex-wrap gap-2">
+              <li class="post-tag">
+                <span class="post-tag-text text-blue-400"></span>
+              </li>
+            </ul>
 
-          <img
-            src=""
-            alt=""
-            class="post-image aspect-video w-full rounded object-cover" />
+            <img
+              src=""
+              alt=""
+              class="post-image aspect-video w-full rounded object-cover" />
+          </a>
 
           <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
             <button
@@ -290,7 +275,7 @@
 
       <template id="modal-template">
         <dialog
-          class="modal w-full max-w-xl bg-transparent backdrop:bg-black/50">
+          class="modal w-full max-w-xl bg-transparent backdrop:bg-black/70">
           <section
             class="mx-4 space-y-6 rounded-md border border-gray-500 bg-gray-700 px-4 py-8 text-gray-200 sm:px-10">
             <h2

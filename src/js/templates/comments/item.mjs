@@ -6,8 +6,9 @@ import { formatDate } from "../../utils/format/index.mjs";
 /**
  * Updates a single comment for a comments template.
  *
- * @param {HTMLElement} commentClone The cloned single comment template.
+ * @param {HTMLElement} commentClone - The cloned single comment template.
  * @param {Object} commentData - The data of the comment.
+ *
  * @returns {HTMLElement} The cloned single comment template populated with a comment.
  */
 export function updateCommentItem(commentClone, commentData) {

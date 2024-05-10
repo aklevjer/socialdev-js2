@@ -5,7 +5,7 @@ import { handleToggleComments } from "../../handlers/comments/index.mjs";
 /**
  * Updates the footer within a post template.
  *
- * @param {DocumentFragment} postClone The cloned post template containing the footer.
+ * @param {DocumentFragment} postClone - The cloned post template containing the footer.
  * @param {Object} postData - The data of the post.
  */
 export function updatePostFooter(postClone, postData) {

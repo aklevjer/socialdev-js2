@@ -1,7 +1,7 @@
 /**
  * Updates the modal inputs within a modal template.
  *
- * @param {DocumentFragment} modalClone The cloned modal template containing the inputs.
+ * @param {DocumentFragment} modalClone - The cloned modal template containing the inputs.
  * @param {string} modalType - The type of modal to be updated. (i.e. "createPost", "editPost", "editProfile").
  * @param {Object} modalData - The data specific to the modal type.
  */
