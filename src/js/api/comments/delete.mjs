@@ -20,7 +20,7 @@ export async function removeComment(postId, commentId) {
     );
 
     if (response.ok) {
-      return;
+      return null;
     }
 
     const responseData = await response.json();

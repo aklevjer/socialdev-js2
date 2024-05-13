@@ -3,7 +3,7 @@ import { createCommentsTemplate } from "../../templates/comments/index.mjs";
 /**
  * Toggles the display of the comment section on a post.
  *
- * @param {object} postData - The post data object.
+ * @param {Object} postData - The post data object.
  */
 export function handleToggleComments(postData) {
   const postContainer = document.querySelector(`#post-${postData.id}`);

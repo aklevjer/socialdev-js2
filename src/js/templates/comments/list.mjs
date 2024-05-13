@@ -1,4 +1,5 @@
 import { updateCommentItem } from "./index.mjs";
+import { sortCommentsByDate } from "../../utils/misc/index.mjs";
 
 /**
  * Updates the comments list within a comments template.
@@ -18,7 +19,9 @@ export function updateCommentList(commentsClone, postData) {
 
   commentItem.remove();
 
-  const updatedComments = comments.map((comment) => {
+  const sortedComments = sortCommentsByDate(comments);
+
+  const updatedComments = sortedComments.map((comment) => {
     const commentClone = commentItem.cloneNode(true);
     const updatedComment = updateCommentItem(commentClone, comment);
 

@@ -16,7 +16,7 @@ export function renderSinglePost(postData, parentElement, isFullPost = false) {
 /**
  * Renders an array of posts to the DOM.
  *
- * @param {object[]} postDatas - An array of data for the posts.
+ * @param {Object[]} postDatas - An array of data for the posts.
  * @param {HTMLElement} parentElement - The element to append the posts to.
  * @param {boolean} [isFullPost=false] - Indicates if the posts should be a full post.
  */
