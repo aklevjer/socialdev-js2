@@ -16,7 +16,7 @@ export async function removePost(postId) {
     });
 
     if (response.ok) {
-      return;
+      return null;
     }
 
     const responseData = await response.json();

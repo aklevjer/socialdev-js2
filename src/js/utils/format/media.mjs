@@ -4,7 +4,7 @@
  * @param {string} postTitle - The title of the post.
  * @param {string} mediaUrl - The URL of the media for the post.
  *
- * @returns {object|null} The formatted media object with URL and alt text, or null if mediaUrl is empty.
+ * @returns {Object|null} The formatted media object with URL and alt text, or null if mediaUrl is empty.
  */
 export function formatMedia(postTitle, mediaUrl) {
   return mediaUrl

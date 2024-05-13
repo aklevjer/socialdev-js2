@@ -1,7 +1,7 @@
 /**
  * Gets the reaction count from an array of reactions.
  *
- * @param {object[]} reactions - The array of reactions to count.
+ * @param {Object[]} reactions - The array of reactions to count.
  * @returns {number} The reaction count.
  */
 export function getReactionCount(reactions) {

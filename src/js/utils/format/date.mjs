@@ -2,7 +2,7 @@
  * Formats a date to the format "Month Day, Year" (i.e. "Jan 1, 1970").
  *
  * @param {string} date - The date to be formatted.
- * @returns {Date} The formatted date.
+ * @returns {string} The formatted date.
  *
  * @example
  * ```js

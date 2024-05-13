@@ -3,7 +3,7 @@ import * as storage from "../storage/index.mjs";
 /**
  * Checks if the logged-in user has reacted to a post with the provided symbol.
  *
- * @param {object[]} reactions - The array of reactions check.
+ * @param {Object[]} reactions - The array of reactions check.
  * @param {string} symbol - The symbol to check for.
  *
  * @returns {boolean} Indicates whether or not the logged-in user has reacted to the post.
