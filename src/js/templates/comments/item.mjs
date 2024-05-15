@@ -43,8 +43,8 @@ export function updateCommentItem(commentClone, commentData) {
   // Add dropdown if the logged-in user is the author
   const { name } = storage.get("profile");
   if (author.name === name) {
-    const dropdown = createDropdownTemplate("comment", commentData);
-    commentHeader.append(dropdown);
+    const dropdownClone = createDropdownTemplate("comment", commentData);
+    commentHeader.append(dropdownClone);
   }
 
   return commentClone;
