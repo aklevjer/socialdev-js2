@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore a SocialDev profile, view posts, and profile information." />
+    <title>SocialDev - Profile</title>
+    <link rel="icon" type="image/svg+xml" href="/src/assets/svg/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600&family=Source+Code+Pro:wght@700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/dist/index.css" />
+    <script type="module" src="/src/js/index.mjs"></script>
+  </head>
+  <body class="bg-gray-800 font-light text-gray-200">
+    <header class="sticky top-0 z-10 border-b border-gray-500 bg-gray-700">
+      <div class="container flex items-center justify-between py-4">
+        <a href="/feed/" class="flex items-center gap-2 py-1">
+          <img src="/src/assets/svg/logo.svg" alt="SocialDev logo" />
+          <span class="font-mono text-2xl text-gray-100">SocialDev</span>
+        </a>
+
+        <button
+          id="nav-btn"
+          class="size-10 rounded-md border border-gray-400 text-2xl active:scale-95 md:hidden"
+          aria-expanded="false"
+          aria-label="Menu">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <nav
+          id="nav"
+          class="absolute left-0 top-[72px] hidden w-full bg-gray-700 md:static md:block md:w-auto">
+          <ul
+            class="flex flex-col gap-4 border-b border-gray-500 px-4 pb-5 md:flex-row md:gap-8 md:border-0 md:p-0">
+            <li>
+              <a
+                href="/feed/"
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                <i class="bi bi-house-fill"></i>
+                <span>Feed</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/profile/"
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75">
+                <i class="bi bi-person-fill"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+
+            <li>
+              <button
+                class="space-x-1 font-normal text-gray-200 transition-colors hover:text-opacity-75"
+                id="logout-btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Log out</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container grid grid-cols-12 py-12 md:gap-12">
+      <aside class="hidden md:col-span-4 md:block">
+        <section
+          class="sticky top-[121px] rounded-md border border-gray-500 bg-gray-700 px-8 py-6">
+          <h2 class="text-xl font-semibold capitalize text-gray-100">
+            Quick links
+          </h2>
+
+          <hr class="mb-6 mt-4 border-gray-400" />
+
+          <ul class="grid gap-4 font-medium">
+            <li class="space-x-1">
+              <i class="bi bi-globe"></i>
+              <span>Explore</span>
+            </li>
+
+            <li class="space-x-1">
+              <i class="bi bi-bookmarks"></i>
+              <span>Favorites</span>
+            </li>
+
+            <li class="space-x-1">
+              <i class="bi bi-person-lines-fill"></i>
+              <span>Contacts</span>
+            </li>
+
+            <li class="space-x-1">
+              <i class="bi bi-chat-square-text"></i>
+              <span>Messages</span>
+            </li>
+
+            <li class="mb-8 space-x-1">
+              <i class="bi bi-fire"></i>
+              <span>Trending</span>
+            </li>
+
+            <li class="space-x-1">
+              <i class="bi bi-gear"></i>
+              <span>Settings</span>
+            </li>
+
+            <li class="space-x-1">
+              <i class="bi bi-question-square"></i>
+              <span>Help</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="col-span-12 md:col-span-8">
+        <div id="profile-card">
+          <div
+            class="mx-auto my-24 size-20 animate-spin rounded-full border-8 border-gray-700 border-t-blue-600"></div>
+        </div>
+        <div id="profile-posts" class="overflow-wrap-anywhere space-y-6"></div>
+      </div>
+    </main>
+
+    <!-- Templates -->
+    <div class="hidden">
+      <template id="post-template">
+        <article
+          class="post grid gap-4 rounded-md border border-gray-500 bg-gray-700 p-6">
+          <div class="post-header flex flex-wrap items-center gap-2">
+            <img
+              src=""
+              alt=""
+              class="post-avatar size-12 rounded-full object-cover" />
+
+            <div>
+              <a
+                href=""
+                class="post-author font-medium text-gray-100 transition-colors hover:text-opacity-80"></a>
+
+              <time
+                datetime=""
+                class="post-date block text-sm text-gray-200 text-opacity-80"></time>
+            </div>
+          </div>
+
+          <a href="" class="post-link group space-y-4">
+            <div class="space-y-2">
+              <h2
+                class="post-title text-xl font-semibold text-gray-100 transition-colors group-hover:text-opacity-80"></h2>
+
+              <p class="post-body"></p>
+            </div>
+
+            <ul class="post-tags flex flex-wrap gap-2">
+              <li class="post-tag">
+                <span class="post-tag-text text-blue-400"></span>
+              </li>
+            </ul>
+
+            <img
+              src=""
+              alt=""
+              class="post-image aspect-video w-full rounded object-cover" />
+          </a>
+
+          <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
+            <button
+              class="post-like-btn space-x-1 font-normal text-gray-100 transition-colors hover:text-opacity-80">
+              <i class="post-like-btn-icon"></i>
+              <span class="post-like-btn-text"></span>
+            </button>
+
+            <button
+              class="post-comment-btn space-x-1 font-normal text-gray-100 transition-colors hover:text-opacity-80">
+              <i class="bi bi-chat-right"></i>
+              <span class="post-comment-btn-text"></span>
+            </button>
+          </div>
+        </article>
+      </template>
+
+      <template id="comments-template">
+        <div class="comment-section grid gap-4">
+          <hr class="my-2 border-gray-400" />
+
+          <ul class="comments-list space-y-4">
+            <li class="comment space-y-4 rounded-md bg-gray-600 p-4">
+              <div class="comment-header flex flex-wrap items-center gap-2">
+                <img
+                  src=""
+                  alt=""
+                  class="comment-avatar size-12 rounded-full object-cover" />
+
+                <div>
+                  <a
+                    href=""
+                    class="comment-author font-medium text-gray-100 transition-colors hover:text-opacity-80">
+                  </a>
+                  <time
+                    datetime=""
+                    class="comment-date block text-sm text-gray-200 text-opacity-80">
+                  </time>
+                </div>
+              </div>
+
+              <p class="comment-body"></p>
+            </li>
+          </ul>
+
+          <form class="comment-form mt-2 flex">
+            <img
+              src=""
+              alt=""
+              class="comment-user-avatar mr-2 hidden size-12 rounded-full object-cover sm:block" />
+
+            <label for="comment" class="sr-only">Comment</label>
+            <textarea
+              class="w-full resize-none rounded-s-md border border-gray-400 bg-gray-600 px-2 py-3 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+              id="comment"
+              name="comment"
+              rows="1"
+              placeholder="Write a comment.."
+              required
+              maxlength="280"></textarea>
+
+            <button
+              type="submit"
+              class="rounded-e-md bg-gray-400 px-4 py-2 transition-colors hover:bg-opacity-80"
+              aria-label="Post comment">
+              <i class="bi bi-send"></i>
+            </button>
+          </form>
+        </div>
+      </template>
+
+      <template id="dropdown-template">
+        <div class="relative ml-auto">
+          <button
+            class="dropdown-btn size-9 rounded-md text-xl transition-colors hover:bg-gray-400"
+            aria-expanded="false"
+            aria-label="Dropdown">
+            <i class="bi bi-three-dots"></i>
+          </button>
+
+          <div
+            class="dropdown absolute right-0 top-10 hidden w-40 rounded-md border border-gray-400 bg-gray-600 text-sm font-normal">
+            <button
+              class="edit-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-pencil-square"></i>
+              <span>Edit post</span>
+            </button>
+
+            <button
+              class="del-post-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete post</span>
+            </button>
+
+            <button
+              class="del-comment-btn w-full space-x-1 p-3 text-left text-white transition-colors hover:bg-gray-400">
+              <i class="bi bi-trash3"></i>
+              <span>Delete comment</span>
+            </button>
+          </div>
+        </div>
+      </template>
+
+      <template id="modal-template">
+        <dialog
+          class="modal w-full max-w-xl bg-transparent backdrop:bg-black/70">
+          <section
+            class="mx-4 space-y-6 rounded-md border border-gray-500 bg-gray-700 px-4 py-8 text-gray-200 sm:px-10">
+            <h2
+              class="modal-title text-xl font-semibold capitalize text-gray-100"></h2>
+
+            <div id="form-message"></div>
+
+            <form class="modal-form space-y-6">
+              <div class="modal-post-inputs space-y-6">
+                <div class="space-y-2">
+                  <label for="title" class="text-m font-medium">Title</label>
+                  <input
+                    type="text"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="title"
+                    name="title"
+                    placeholder="Title"
+                    required
+                    maxlength="280"
+                    title="Title is required" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="mediaurl" class="text-m font-medium">
+                    Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="mediaurl"
+                    name="mediaurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="tags" class="text-m font-medium">Tags</label>
+                  <input
+                    type="text"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="tags"
+                    name="tags"
+                    placeholder="i.e. HTML CSS Tailwind"
+                    title="Separate tags with a space, tags can't contain hashtags (#)" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="body" class="text-m font-medium">Text</label>
+                  <textarea
+                    class="min-h-32 w-full resize-none rounded-md border border-gray-400 bg-gray-600 p-2 align-top outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="body"
+                    name="body"
+                    maxlength="280"
+                    placeholder="Write your text here..."></textarea>
+                </div>
+              </div>
+
+              <div class="modal-profile-inputs space-y-6">
+                <div class="space-y-2">
+                  <label for="bannerurl" class="text-m font-medium">
+                    Banner Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="bannerurl"
+                    name="bannerurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="avatarurl" class="text-m font-medium">
+                    Profile Image URL
+                  </label>
+                  <input
+                    type="url"
+                    class="w-full rounded-md border border-gray-400 bg-gray-600 p-2 outline-none placeholder:text-gray-200/70 focus:border-blue-600"
+                    id="avatarurl"
+                    name="avatarurl"
+                    placeholder="https://www.example.com/image.jpg"
+                    pattern="https?://.+"
+                    maxlength="300"
+                    title="Must be a valid, live, and publicly accessible image URL" />
+                </div>
+              </div>
+
+              <div class="flex justify-end gap-4">
+                <button
+                  type="button"
+                  class="modal-cancel-btn rounded-md bg-gray-400 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80">
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  class="modal-submit-btn rounded-md bg-blue-600 px-4 py-2 font-normal text-white transition-colors hover:bg-opacity-80"></button>
+              </div>
+            </form>
+          </section>
+        </dialog>
+      </template>
+
+      <template id="alert-template">
+        <div class="alert-container fixed bottom-6 flex w-full justify-center">
+          <div
+            class="alert-content overflow-wrap-anywhere flex items-center gap-2 rounded-md p-3 text-m font-normal">
+            <i class="alert-icon"></i>
+            <p class="alert-message"></p>
+          </div>
+        </div>
+      </template>
+
+      <template id="profile-template">
+        <section class="mb-8 rounded-md border border-gray-500 bg-gray-700">
+          <img
+            src=""
+            alt=""
+            class="profile-banner h-[200px] w-full rounded-t-md object-cover" />
+
+          <div class="mx-6 flex flex-col flex-wrap items-center sm:flex-row">
+            <img
+              src=""
+              alt=""
+              class="profile-avatar -mt-12 size-28 rounded-full border-2 border-gray-400 object-cover" />
+
+            <h1
+              class="profile-name my-3 text-2xl font-semibold text-gray-100 sm:m-3"></h1>
+
+            <button
+              class="profile-btn space-x-1 rounded-md bg-blue-600 px-3 py-2 font-normal text-white transition-colors hover:bg-opacity-80 sm:ms-auto">
+              <i class="profile-btn-icon"></i>
+              <span class="profile-btn-text"></span>
+            </button>
+          </div>
+
+          <div
+            class="m-6 mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-start">
+            <div>
+              <strong
+                class="profile-followers font-semibold text-gray-100"></strong>
+              <span>Followers</span>
+            </div>
+
+            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
+
+            <div>
+              <strong
+                class="profile-following font-semibold text-gray-100"></strong>
+              <span>Following</span>
+            </div>
+
+            <span class="hidden w-px bg-gray-400 sm:inline-block"></span>
+
+            <div>
+              <strong
+                class="profile-posts font-semibold text-gray-100"></strong>
+              <span>Posts</span>
+            </div>
+          </div>
+        </section>
+      </template>
+    </div>
+  </body>
+</html>

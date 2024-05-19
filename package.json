@@ -1,0 +1,34 @@
+{
+  "name": "socialdev-js2",
+  "version": "0.0.1",
+  "description": "A social media app developed as the course assignment in the JavaScript 2 course at Noroff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/css/index.css -o ./dist/index.css --minify",
+    "watch": "tailwindcss -i ./src/css/index.css -o ./dist/index.css --watch",
+    "start": "live-server",
+    "dev": "npm-run-all --parallel watch start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aklevjer/socialdev-js2.git"
+  },
+  "keywords": [
+    "CSS",
+    "Frameworks",
+    "Tailwind"
+  ],
+  "author": "Aleksander Klevjer <alekle53052@stud.noroff.no>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aklevjer/socialdev-js2/issues"
+  },
+  "homepage": "https://github.com/aklevjer/socialdev-js2#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3"
+  }
+}
